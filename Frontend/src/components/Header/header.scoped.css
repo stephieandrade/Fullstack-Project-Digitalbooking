@@ -1,0 +1,30 @@
+header {
+  display: flex;
+  justify-content: center;
+}
+
+.contenedor-header {
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--five-color);
+  align-items: flex-end;
+  padding: 7px;
+  padding-left: var(--margin-mobile);
+  padding-right: var(--margin-mobile);
+  align-items: center;
+  width: 100%;
+  max-width: 1368px;
+}
+
+@media screen and (min-width: 768px) {
+  .contenedor-header {
+    padding-left: var(--margin-tablet);
+    padding-right: var(--margin-tablet);
+  }
+}
+@media screen and (min-width: 992px) {
+  .contenedor-header {
+    padding-left: var(--margin-desktop);
+    padding-right: var(--margin-desktop);
+  }
+}

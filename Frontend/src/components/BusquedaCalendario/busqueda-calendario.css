@@ -1,0 +1,145 @@
+/* Contenedor del input */
+.rmdp-container {
+  width: 100%;
+}
+
+/*  Input del DatePicker en Mobile */
+.rmdp-container .rmdp-input {
+  border: none;
+  width: 100%;
+  height: 38px;
+}
+
+.contenedor-home-calendario .rmdp-container {
+  width: 100%;
+  height: 38px;
+  outline: none;
+  border-color: transparent;
+  background: red;
+  border: 1px solid #f3f1ed;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 5px 5px 5px 5px;
+}
+
+.home .rmdp-day span,
+.home .rmdp-header-values span,
+.home .rmdp-week-day {
+  font-size: 20px;
+  font-weight: 700;
+}
+.home .rmdp-week-day {
+  color: #545776;
+}
+
+.home .rmdp-week {
+  justify-content: space-around;
+}
+/* El color del mes y año*/
+.home .rmdp-header-values {
+  color: var(--three-color);
+}
+
+.home .rmdp-left,
+.home .rmdp-right {
+}
+
+/* El día seleccionado actualmente */
+.home .rmdp-day:not(.rmdp-disabled):not(.rmdp-day-hidden) span:hover {
+  background-color: var(--one-color);
+}
+
+/* El día de hoy */
+.home .rmdp-day.rmdp-today span {
+  background-color: var(--one-color);
+}
+
+.home span.sd {
+  font-size: 16px;
+  color: var(--two-color);
+}
+.home .rmdp-day.rmdp-disabled span {
+  font-size: 14px;
+  color: black;
+}
+
+/* La distancia entre los dias */
+.home .rmdp-day {
+  padding: 20px;
+  margin: 7px;
+}
+.home .rmdp-input {
+  height: 33.7px;
+  outline: none;
+  border-color: transparent;
+  width: 60%;
+}
+.home .rmdp-container::before {
+  content: "\f073";
+  color: #545776;
+  display: inline-block;
+
+  font-size: 20px;
+  visibility: visible;
+  font-family: "Font Awesome 5 Free";
+}
+
+.home .rmdp-day.rmdp-range {
+  background-color: var(--one-color);
+  border-radius: 50%;
+  color: #fff;
+}
+
+.home .rmdp-day.rmdp-range span {
+  color: #fff;
+}
+.home .rmdp-day.rmdp-range.start {
+  background-color: #1dbeb4;
+  box-shadow: 0 0 3px #1dbeb4;
+  color: #fff;
+  border-radius: 50%;
+}
+.home .rmdp-day.rmdp-range.end {
+  background-color: #1dbeb4;
+  box-shadow: 0 0 3px #1dbeb4;
+  color: #fff;
+  border-radius: 50%;
+}
+/*--------------MODELO ADAPTATIVO TABLET---------------*/
+
+@media (min-width: 768px) {
+  /* La distancia entre los días */
+  .home .rmdp-day {
+    padding: 0px;
+    margin: 3px;
+  }
+
+  .home .rmdp-container {
+    width: 260px;
+  }
+
+  .home .rmdp-day-picker {
+    background-color: white;
+    /* width: 650px; */
+  }
+  .home .rmdp-top-class {
+    background-color: white;
+    /* right: 250px; */
+  }
+
+  .home .rmdp-day-picker {
+    margin-right: 50px;
+  }
+  .home .rmdp-top-class {
+    margin-right: 20px;
+  }
+}
+
+@media (min-width: 992px) {
+  .home .rmdp-container {
+    width: 420px;
+  }
+  .home .rmdp-top-class {
+    width: 100%;
+  }
+}

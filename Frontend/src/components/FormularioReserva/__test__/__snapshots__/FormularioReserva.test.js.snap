@@ -1,0 +1,73 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FormularioReserva Component debería mostrar <FormularioReserva/> correctamente  1`] = `
+<div
+  className="contenedorFormulario"
+>
+  <form
+    onSubmit={[Function]}
+  >
+    <div
+      className="formulario1"
+    >
+      <div
+        className="tituloinput"
+      >
+        <h3>
+          Nombre
+        </h3>
+        <input
+          disabled={true}
+          name="nombre"
+          placeholder="Nombre"
+          type="text"
+        />
+      </div>
+      <div
+        className="tituloinput"
+      >
+        <h3>
+          Apellido
+        </h3>
+        <input
+          disabled={true}
+          name="apellido"
+          placeholder="Apellido"
+          type="text"
+        />
+      </div>
+    </div>
+    <div
+      className="formulario2"
+    >
+      <div
+        className="tituloinput"
+      >
+        <h3>
+          Correo electrónico
+        </h3>
+        <input
+          disabled={true}
+          name="email"
+          placeholder="Correo electronico "
+          type="email"
+        />
+      </div>
+      <div
+        className="tituloinput"
+      >
+        <h3>
+          Ciudad
+        </h3>
+        <input
+          name="ciudad"
+          onChange={[Function]}
+          placeholder="Ciudad"
+          type="text"
+          value=""
+        />
+      </div>
+    </div>
+  </form>
+</div>
+`;

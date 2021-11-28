@@ -1,0 +1,28 @@
+/* Iniciales en mobile */
+div.initials {
+  width: 37px;
+  height: 37px;
+  min-width: 37px;
+  background-color: var(--five-color);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Texto en mobile*/
+p {
+  color: var(--two-color);
+  font-size: 20px;
+  font-weight: 700;
+}
+
+/* Texto y color del fondo de iniciales en Tablet/Desktop*/
+@media screen and (min-width: 768px) {
+  div.initials {
+    background-color: var(--two-color);
+  }
+  p {
+    color: var(--five-color);
+  }
+}

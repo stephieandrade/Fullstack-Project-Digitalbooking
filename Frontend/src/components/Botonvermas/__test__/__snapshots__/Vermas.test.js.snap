@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Botonvermas Component debería mostrar <Botonvermas/> correctamente  1`] = `
+<div
+  className="App"
+>
+  <a
+    href="#"
+  >
+    ver más
+  </a>
+</div>
+`;

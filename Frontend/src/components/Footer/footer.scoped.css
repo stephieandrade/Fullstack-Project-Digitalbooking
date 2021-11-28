@@ -1,0 +1,39 @@
+/**-----------------------Estilos Footer--------------------------*/
+footer {
+  width: 100%;
+  background-color: var(--one-color);
+  display: flex;
+  justify-content: center;
+}
+
+.contenedor-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 58px;
+  width: 100%;
+  max-width: 1368px;
+  padding-left: var(--margin-mobile);
+  padding-right: var(--margin-mobile);
+}
+p {
+  font-size: 14px;
+  color: var(--five-color);
+  font-weight: 700;
+}
+
+/* TABLET */
+@media screen and (min-width: 768px) {
+  .contenedor-footer {
+    padding-left: var(--margin-tablet);
+    padding-right: var(--margin-tablet);
+  }
+}
+
+/* DESKTOP */
+@media screen and (min-width: 992px) {
+  .contenedor-footer {
+    padding-left: var(--margin-desktop);
+    padding-right: var(--margin-desktop);
+  }
+}

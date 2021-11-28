@@ -1,0 +1,571 @@
+{
+  "uuid": "329c5458-2e5f-49ad-a578-5875d886dd12",
+  "lastMigration": 18,
+  "name": "dev",
+  "endpointPrefix": "",
+  "latency": 150,
+  "port": 8085,
+  "hostname": "0.0.0.0",
+  "routes": [
+    {
+      "uuid": "90b6af0e-f0f7-4058-b6a2-d5b7a1f3a9c9",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "productos",
+      "responses": [
+        {
+          "uuid": "e307815b-713a-4f2f-bbf8-20b86e57f740",
+          "body": "[\n  {\n        \"productos_id\": 1,\n        \"nombre\": \"Audi Q5\",\n        \"descripcion\": \"En el corazón de San Telmo, disfruta de un albergue inspirado en las pasiones de Buenos Aires.\",\n        \"url_producto\": \"https://cdn.pixabay.com/photo/2018/09/22/14/30/wheel-3695434_960_720.jpg\",\n        \"categoria\": {\n            \"categorias_id\": 1,\n            \"titulo\": \"Deportivo\",\n            \"descripcion\": \"descapotable negro\",\n            \"url_imagen\": \"url\"\n        },\n        \"ciudad\": {\n            \"ciudades_id\": 1,\n            \"nombre\": \"Rosario\",\n            \"nombre_pais\": \"Argentina\"\n            },\n        \"puntuaciones\": 8,\n        \"listadeimagenes\": [\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2017/10/22/11/50/audi-2877588__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://loscoches.com/wp-content/uploads/2021/10/03-Audi-A4-Los-Coches.jpg.webp\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://loscoches.com/wp-content/uploads/2021/05/3-Audi-Q5-Los-Coches-2021.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2017/10/22/11/50/audi-2877588__340.jpg\" \n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2017/09/03/16/32/transport-2711020__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2021/01/12/14/48/audi-5911634__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2016/11/29/06/46/audi-1867882__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2018/02/21/13/17/audi-rs7-3170303__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2017/04/05/21/38/car-2206415__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2018/03/17/16/28/audi-3234422__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2016/11/29/06/46/audi-1867882__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2016/12/03/11/48/car-1879632__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2016/09/01/15/01/car-1636303__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2017/09/03/16/32/transport-2711020__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2017/06/26/07/42/audi-2442981__340.jpg\"\n\t\t                }\n\t\t                      ]\n    },\n    {\n        \"productos_id\": 2,\n        \"nombre\": \"Audi Q7\",\n        \"descripcion\": \"En el corazón de San Telmo, disfruta de un albergue inspirado en las pasiones de Buenos Aires.\",\n        \"url_producto\": \"https://cdn.pixabay.com/photo/2015/11/07/11/52/car-tire-1031579_960_720.jpg\",\n        \"categoria\": {\n            \"categorias_id\": 1,\n            \"titulo\": \"Deportivo\",\n            \"descripcion\": \"descapotable negro\",\n            \"url_imagen\": \"url\"\n        },\n        \"ciudad\": {\n            \"ciudades_id\": 1,\n            \"nombre\": \"Rosario\",\n            \"nombre_pais\": \"Argentina\"\n            },\n        \"puntuaciones\": 8,\n        \"listadeimagenes\": [\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2017/10/22/11/50/audi-2877588__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://loscoches.com/wp-content/uploads/2021/10/03-Audi-A4-Los-Coches.jpg.webp\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://loscoches.com/wp-content/uploads/2021/05/3-Audi-Q5-Los-Coches-2021.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2017/10/22/11/50/audi-2877588__340.jpg\" \n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2017/09/03/16/32/transport-2711020__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2021/01/12/14/48/audi-5911634__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2016/11/29/06/46/audi-1867882__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2018/02/21/13/17/audi-rs7-3170303__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2017/04/05/21/38/car-2206415__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2018/03/17/16/28/audi-3234422__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2016/11/29/06/46/audi-1867882__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2016/12/03/11/48/car-1879632__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2016/09/01/15/01/car-1636303__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2017/09/03/16/32/transport-2711020__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2017/06/26/07/42/audi-2442981__340.jpg\"\n\t\t                }\n\t\t                      ]\n    },\n    {\n    \"productos_id\": 3,\n    \"nombre\": \"Bmwl3\",\n    \"descripcion\": \"En el corazón de San Telmo, disfruta de un albergue inspirado en las pasiones de Buenos Aires.\",\n    \"url_producto\": \"https://cdn.pixabay.com/photo/2016/04/06/22/24/auto-1312998_960_720.jpg\",\n    \"categoria\": {\n        \"categorias_id\": 2,\n        \"titulo\": \"Lujoso\",\n        \"descripcion\": \"descapotable negro\",\n        \"url_imagen\": \"url\"\n        },\n    \"ciudad\": {\n        \"ciudades_id\": 2,\n        \"nombre\": \"Cordoba\",\n        \"nombre_pais\": \"Argentina\"\n        },\n      \"puntuaciones\": 8,\n        \"listadeimagenes\": [\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2017/10/22/11/50/audi-2877588__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://loscoches.com/wp-content/uploads/2021/10/03-Audi-A4-Los-Coches.jpg.webp\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://loscoches.com/wp-content/uploads/2021/05/3-Audi-Q5-Los-Coches-2021.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2017/10/22/11/50/audi-2877588__340.jpg\" \n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2017/09/03/16/32/transport-2711020__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2021/01/12/14/48/audi-5911634__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2016/11/29/06/46/audi-1867882__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2018/02/21/13/17/audi-rs7-3170303__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2017/04/05/21/38/car-2206415__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2018/03/17/16/28/audi-3234422__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2016/11/29/06/46/audi-1867882__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2016/12/03/11/48/car-1879632__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2016/09/01/15/01/car-1636303__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2017/09/03/16/32/transport-2711020__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2017/06/26/07/42/audi-2442981__340.jpg\"\n\t\t                }\n\t\t                      ]\n    },\n    {\n        \"productos_id\": 4,\n        \"nombre\": \"Kia Sportage\",\n        \"descripcion\": \"En el corazón de San Telmo, disfruta de un albergue inspirado en las pasiones de Buenos Aires.\",\n        \"url_producto\": \"https://cdn.pixabay.com/photo/2015/09/09/22/07/car-933704_960_720.jpg\",\n        \"categoria\": {\n            \"categorias_id\": 2,\n            \"titulo\": \"Lujoso\",\n            \"descripcion\": \"descapotable negro\",\n            \"url_imagen\": \"url\"\n        },\n        \"ciudad\": {\n            \"ciudades_id\": 1,\n            \"nombre\": \"Rosario\",\n            \"nombre_pais\": \"Argentina\"\n            },\n        \"puntuaciones\": 8,\n        \"listadeimagenes\": [\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2017/10/22/11/50/audi-2877588__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://loscoches.com/wp-content/uploads/2021/10/03-Audi-A4-Los-Coches.jpg.webp\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://loscoches.com/wp-content/uploads/2021/05/3-Audi-Q5-Los-Coches-2021.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2017/10/22/11/50/audi-2877588__340.jpg\" \n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2017/09/03/16/32/transport-2711020__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2021/01/12/14/48/audi-5911634__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2016/11/29/06/46/audi-1867882__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2018/02/21/13/17/audi-rs7-3170303__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2017/04/05/21/38/car-2206415__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2018/03/17/16/28/audi-3234422__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2016/11/29/06/46/audi-1867882__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2016/12/03/11/48/car-1879632__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2016/09/01/15/01/car-1636303__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2017/09/03/16/32/transport-2711020__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2017/06/26/07/42/audi-2442981__340.jpg\"\n\t\t                }\n\t\t                      ]\n    },\n    {\n        \"productos_id\": 5,\n        \"nombre\": \"Mazda Cx 30\",\n        \"descripcion\": \"En el corazón de San Telmo, disfruta de un albergue inspirado en las pasiones de Buenos Aires.\",\n        \"url_producto\": \"https://cdn.pixabay.com/photo/2016/12/16/17/54/bmw-1911913_960_720.jpg\",\n        \"categoria\": {\n            \"categorias_id\": 3,\n            \"titulo\": \"Económico\",\n            \"descripcion\": \"descapotable negro\",\n            \"url_imagen\": \"url\"\n        },\n        \"ciudad\": {\n            \"ciudades_id\": 1,\n            \"nombre\": \"Rosario\",\n            \"nombre_pais\": \"Argentina\"\n            },\n        \"puntuaciones\": 8,\n        \"listadeimagenes\": [\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2017/10/22/11/50/audi-2877588__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://loscoches.com/wp-content/uploads/2021/10/03-Audi-A4-Los-Coches.jpg.webp\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://loscoches.com/wp-content/uploads/2021/05/3-Audi-Q5-Los-Coches-2021.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2017/10/22/11/50/audi-2877588__340.jpg\" \n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2017/09/03/16/32/transport-2711020__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2021/01/12/14/48/audi-5911634__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2016/11/29/06/46/audi-1867882__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2018/02/21/13/17/audi-rs7-3170303__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2017/04/05/21/38/car-2206415__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2018/03/17/16/28/audi-3234422__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2016/11/29/06/46/audi-1867882__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2016/12/03/11/48/car-1879632__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2016/09/01/15/01/car-1636303__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2017/09/03/16/32/transport-2711020__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2017/06/26/07/42/audi-2442981__340.jpg\"\n\t\t                }\n\t\t                      ]\n    },\n    {\n        \"productos_id\": 6,\n        \"nombre\": \"Nissan March\",\n        \"descripcion\": \"En el corazón de San Telmo, disfruta de un albergue inspirado en las pasiones de Buenos Aires.\",\n        \"url_producto\": \"https://cdn.pixabay.com/photo/2015/12/19/10/32/seat-cushion-1099624_960_720.jpg\",\n        \"categoria\": {\n            \"categorias_id\": 3,\n            \"titulo\": \"Económico\",\n            \"descripcion\": \"descapotable negro\",\n            \"url_imagen\": \"url\"\n        },\n        \"ciudad\": {\n            \"ciudades_id\": 1,\n            \"nombre\": \"Rosario\",\n            \"nombre_pais\": \"Argentina\"\n            },\n        \"puntuaciones\": 8,\n        \"listadeimagenes\": [\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2017/10/22/11/50/audi-2877588__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://loscoches.com/wp-content/uploads/2021/10/03-Audi-A4-Los-Coches.jpg.webp\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://loscoches.com/wp-content/uploads/2021/05/3-Audi-Q5-Los-Coches-2021.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2017/10/22/11/50/audi-2877588__340.jpg\" \n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2017/09/03/16/32/transport-2711020__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2021/01/12/14/48/audi-5911634__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2016/11/29/06/46/audi-1867882__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2018/02/21/13/17/audi-rs7-3170303__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2017/04/05/21/38/car-2206415__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2018/03/17/16/28/audi-3234422__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2016/11/29/06/46/audi-1867882__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2016/12/03/11/48/car-1879632__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2016/09/01/15/01/car-1636303__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2017/09/03/16/32/transport-2711020__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2017/06/26/07/42/audi-2442981__340.jpg\"\n\t\t                }\n\t\t                      ]\n    },\n    {\n        \"productos_id\": 7,\n        \"nombre\": \"Renault Logan\",\n        \"descripcion\": \"En el corazón de San Telmo, disfruta de un albergue inspirado en las pasiones de Buenos Aires.\",\n        \"url_producto\": \"https://cdn.pixabay.com/photo/2021/07/01/14/31/car-6379534_960_720.jpg\",\n        \"categoria\": {\n            \"categorias_id\": 4,\n            \"titulo\": \"Eléctrico\",\n            \"descripcion\": \"descapotable negro\",\n            \"url_imagen\": \"url\"\n        },\n        \"ciudad\": {\n            \"ciudades_id\": 1,\n            \"nombre\": \"Rosario\",\n            \"nombre_pais\": \"Argentina\"\n            },\n        \"puntuaciones\": 8,\n        \"listadeimagenes\": [\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2017/10/22/11/50/audi-2877588__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://loscoches.com/wp-content/uploads/2021/10/03-Audi-A4-Los-Coches.jpg.webp\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://loscoches.com/wp-content/uploads/2021/05/3-Audi-Q5-Los-Coches-2021.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2017/10/22/11/50/audi-2877588__340.jpg\" \n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2017/09/03/16/32/transport-2711020__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2021/01/12/14/48/audi-5911634__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2016/11/29/06/46/audi-1867882__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2018/02/21/13/17/audi-rs7-3170303__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2017/04/05/21/38/car-2206415__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2018/03/17/16/28/audi-3234422__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2016/11/29/06/46/audi-1867882__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2016/12/03/11/48/car-1879632__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2016/09/01/15/01/car-1636303__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2017/09/03/16/32/transport-2711020__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2017/06/26/07/42/audi-2442981__340.jpg\"\n\t\t                }\n\t\t                      ]\n    },\n    {\n        \"productos_id\": 8,\n        \"nombre\": \"Spark GT\",\n        \"descripcion\": \"En el corazón de San Telmo, disfruta de un albergue inspirado en las pasiones de Buenos Aires.\",\n        \"url_producto\": \"https://media.istockphoto.com/photos/japanese-middle-aged-woman-using-car-navigation-system-picture-id1312719086?b=1&k=20&m=1312719086&s=170667a&w=0&h=HENi9F8quwpq4UoCtcgH_vN1_5Pl2tQuu_2zusRgoxo=\",\n        \"categoria\": {\n            \"categorias_id\": 4,\n            \"titulo\": \"Eléctrico\",\n            \"descripcion\": \"descapotable negro\",\n            \"url_imagen\": \"url\"\n        },\n        \"ciudad\": {\n            \"ciudades_id\": 1,\n            \"nombre\": \"Rosario\",\n            \"nombre_pais\": \"Argentina\"\n            },\n        \"puntuaciones\": 8,\n        \"listadeimagenes\": [\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2017/10/22/11/50/audi-2877588__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://loscoches.com/wp-content/uploads/2021/10/03-Audi-A4-Los-Coches.jpg.webp\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://loscoches.com/wp-content/uploads/2021/05/3-Audi-Q5-Los-Coches-2021.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2017/10/22/11/50/audi-2877588__340.jpg\" \n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2017/09/03/16/32/transport-2711020__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2021/01/12/14/48/audi-5911634__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2016/11/29/06/46/audi-1867882__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2018/02/21/13/17/audi-rs7-3170303__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2017/04/05/21/38/car-2206415__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2018/03/17/16/28/audi-3234422__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2016/11/29/06/46/audi-1867882__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2016/12/03/11/48/car-1879632__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2016/09/01/15/01/car-1636303__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2017/09/03/16/32/transport-2711020__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2017/06/26/07/42/audi-2442981__340.jpg\"\n\t\t                }\n\t\t                      ]\n    }\n]",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "8d31df05-8720-4045-b250-5c38eef65893",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "productos/1",
+      "responses": [
+        {
+          "uuid": "de93f727-6c0f-4d23-be59-13ea9dda6581",
+          "body": "{\n    \"productos_id\": 1,\n        \"nombre\": \"Audi Q5\",\n        \"descripcion\": \"En el corazón de San Telmo, disfruta de un albergue inspirado en las pasiones de Buenos Aires.\",\n        \"url_producto\": \"https://cdn.pixabay.com/photo/2021/11/01/21/20/car-6761801__340.jpg\",\n        \"categoria\": {\n            \"categorias_id\": 1,\n            \"titulo\": \"Deportivo\",\n            \"descripcion\": \"descapotable negro\",\n            \"url_imagen\": \"url\"\n        },\n        \"ciudad\": {\n            \"ciudades_id\": 1,\n            \"nombre\": \"Rosario\",\n            \"nombre_pais\": \"Argentina\"\n            },\n        \"puntuaciones\": 8,\n        \"listadeimagenes\": [\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2017/10/22/11/50/audi-2877588__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://loscoches.com/wp-content/uploads/2021/10/03-Audi-A4-Los-Coches.jpg.webp\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://loscoches.com/wp-content/uploads/2021/05/3-Audi-Q5-Los-Coches-2021.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2017/10/22/11/50/audi-2877588__340.jpg\" \n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2017/09/03/16/32/transport-2711020__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2021/01/12/14/48/audi-5911634__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2016/11/29/06/46/audi-1867882__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2018/02/21/13/17/audi-rs7-3170303__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2017/04/05/21/38/car-2206415__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2018/03/17/16/28/audi-3234422__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2016/11/29/06/46/audi-1867882__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2016/12/03/11/48/car-1879632__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2016/09/01/15/01/car-1636303__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2017/09/03/16/32/transport-2711020__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2017/06/26/07/42/audi-2442981__340.jpg\"\n\t\t                }\n\t\t                      ]\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "e6117bc5-689a-4269-9127-c11aaba7a636",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "productos/2",
+      "responses": [
+        {
+          "uuid": "21d70b50-eabc-443b-962c-629483cb8f19",
+          "body": "{\n    \"productos_id\": 2,\n        \"nombre\": \"Audi Q7\",\n        \"descripcion\": \"En el corazón de San Telmo, disfruta de un albergue inspirado en las pasiones de Buenos Aires.\",\n        \"url_producto\": \"https://cdn.pixabay.com/photo/2021/11/01/21/20/car-6761801__340.jpg\",\n        \"categoria\": {\n            \"categorias_id\": 1,\n            \"titulo\": \"Deportivo\",\n            \"descripcion\": \"descapotable negro\",\n            \"url_imagen\": \"url\"\n        },\n        \"ciudad\": {\n            \"ciudades_id\": 1,\n            \"nombre\": \"Rosario\",\n            \"nombre_pais\": \"Argentina\"\n            },\n        \"puntuaciones\": 8,\n         \"listadeimagenes\": [\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2017/10/22/11/50/audi-2877588__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://loscoches.com/wp-content/uploads/2021/10/03-Audi-A4-Los-Coches.jpg.webp\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://loscoches.com/wp-content/uploads/2021/05/3-Audi-Q5-Los-Coches-2021.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2017/10/22/11/50/audi-2877588__340.jpg\" \n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2017/09/03/16/32/transport-2711020__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2021/01/12/14/48/audi-5911634__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2016/11/29/06/46/audi-1867882__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2018/02/21/13/17/audi-rs7-3170303__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2017/04/05/21/38/car-2206415__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2018/03/17/16/28/audi-3234422__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2016/11/29/06/46/audi-1867882__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2016/12/03/11/48/car-1879632__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2016/09/01/15/01/car-1636303__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2017/09/03/16/32/transport-2711020__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2017/06/26/07/42/audi-2442981__340.jpg\"\n\t\t                }\n\t\t                      ]\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "7caa2f16-6d52-41b9-9218-b2e7535ddd07",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "productos/3",
+      "responses": [
+        {
+          "uuid": "f03212d9-8317-4d9c-8f44-0a69ff8bc55c",
+          "body": "{\n    \"productos_id\": 3,\n    \"nombre\": \"Bmwl3\",\n    \"descripcion\": \"En el corazón de San Telmo, disfruta de un albergue inspirado en las pasiones de Buenos Aires.\",\n        \"url_producto\": \"https://cdn.pixabay.com/photo/2021/11/01/21/20/car-6761801__340.jpg\",\n    \"categoria\": {\n        \"categorias_id\": 2,\n        \"titulo\": \"Lujoso\",\n        \"descripcion\": \"descapotable negro\",\n        \"url_imagen\": \"url\"\n        },\n    \"ciudad\": {\n        \"ciudades_id\": 2,\n        \"nombre\": \"Cordoba\",\n        \"nombre_pais\": \"Argentina\"\n        },\n      \"puntuaciones\": 8,\n         \"listadeimagenes\": [\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2017/10/22/11/50/audi-2877588__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://loscoches.com/wp-content/uploads/2021/10/03-Audi-A4-Los-Coches.jpg.webp\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://loscoches.com/wp-content/uploads/2021/05/3-Audi-Q5-Los-Coches-2021.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2017/10/22/11/50/audi-2877588__340.jpg\" \n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2017/09/03/16/32/transport-2711020__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2021/01/12/14/48/audi-5911634__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2016/11/29/06/46/audi-1867882__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2018/02/21/13/17/audi-rs7-3170303__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2017/04/05/21/38/car-2206415__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2018/03/17/16/28/audi-3234422__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2016/11/29/06/46/audi-1867882__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2016/12/03/11/48/car-1879632__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2016/09/01/15/01/car-1636303__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2017/09/03/16/32/transport-2711020__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2017/06/26/07/42/audi-2442981__340.jpg\"\n\t\t                }\n\t\t                      ]\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "696454b4-6b56-4878-aaca-4bc11b69142d",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "productos/4",
+      "responses": [
+        {
+          "uuid": "5936ad8e-ab0d-4a8f-b77a-baa1226e939c",
+          "body": "{\n    \"productos_id\": 4,\n        \"nombre\": \"Kia Sportage\",\n        \"descripcion\": \"En el corazón de San Telmo, disfruta de un albergue inspirado en las pasiones de Buenos Aires.\",\n        \"url_producto\": \"https://cdn.pixabay.com/photo/2021/11/01/21/20/car-6761801__340.jpg\",\n        \"categoria\": {\n            \"categorias_id\": 2,\n            \"titulo\": \"Lujoso\",\n            \"descripcion\": \"descapotable negro\",\n            \"url_imagen\": \"url\"\n        },\n        \"ciudad\": {\n            \"ciudades_id\": 1,\n            \"nombre\": \"Rosario\",\n            \"nombre_pais\": \"Argentina\"\n            },\n        \"puntuaciones\": 8,\n         \"listadeimagenes\": [\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2017/10/22/11/50/audi-2877588__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://loscoches.com/wp-content/uploads/2021/10/03-Audi-A4-Los-Coches.jpg.webp\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://loscoches.com/wp-content/uploads/2021/05/3-Audi-Q5-Los-Coches-2021.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2017/10/22/11/50/audi-2877588__340.jpg\" \n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2017/09/03/16/32/transport-2711020__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2021/01/12/14/48/audi-5911634__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2016/11/29/06/46/audi-1867882__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2018/02/21/13/17/audi-rs7-3170303__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2017/04/05/21/38/car-2206415__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2018/03/17/16/28/audi-3234422__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2016/11/29/06/46/audi-1867882__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2016/12/03/11/48/car-1879632__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2016/09/01/15/01/car-1636303__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2017/09/03/16/32/transport-2711020__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2017/06/26/07/42/audi-2442981__340.jpg\"\n\t\t                }\n\t\t                      ]\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "1eaa3571-9d2d-44c2-8e03-e4f5885df0f9",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "productos/5",
+      "responses": [
+        {
+          "uuid": "13e6215b-d9ca-4242-a2ce-e83fb0fdf7d7",
+          "body": "{\n  \"productos_id\": 5,\n        \"nombre\": \"Mazda Cx 30\",\n        \"descripcion\": \"En el corazón de San Telmo, disfruta de un albergue inspirado en las pasiones de Buenos Aires.\",\n        \"url_producto\": \"https://cdn.pixabay.com/photo/2021/11/01/21/20/car-6761801__340.jpg\",\n        \"categoria\": {\n            \"categorias_id\": 3,\n            \"titulo\": \"Economico\",\n            \"descripcion\": \"descapotable negro\",\n            \"url_imagen\": \"url\"\n        },\n        \"ciudad\": {\n            \"ciudades_id\": 1,\n            \"nombre\": \"Rosario\",\n            \"nombre_pais\": \"Argentina\"\n            },\n        \"puntuaciones\": 8,\n         \"listadeimagenes\": [\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2017/10/22/11/50/audi-2877588__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://loscoches.com/wp-content/uploads/2021/10/03-Audi-A4-Los-Coches.jpg.webp\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://loscoches.com/wp-content/uploads/2021/05/3-Audi-Q5-Los-Coches-2021.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2017/10/22/11/50/audi-2877588__340.jpg\" \n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2017/09/03/16/32/transport-2711020__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2021/01/12/14/48/audi-5911634__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2016/11/29/06/46/audi-1867882__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2018/02/21/13/17/audi-rs7-3170303__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2017/04/05/21/38/car-2206415__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2018/03/17/16/28/audi-3234422__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2016/11/29/06/46/audi-1867882__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2016/12/03/11/48/car-1879632__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2016/09/01/15/01/car-1636303__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2017/09/03/16/32/transport-2711020__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2017/06/26/07/42/audi-2442981__340.jpg\"\n\t\t                }\n\t\t                      ]\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "62855a18-22da-4cb3-bb60-1f1c9fb9afe7",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "productos/6",
+      "responses": [
+        {
+          "uuid": "aec87467-b158-4a03-af84-c81874125f11",
+          "body": "{\n  \"productos_id\": 6,\n        \"nombre\": \"Nissan March\",\n        \"descripcion\": \"En el corazón de San Telmo, disfruta de un albergue inspirado en las pasiones de Buenos Aires.\",\n        \"url_producto\": \"https://cdn.pixabay.com/photo/2021/11/01/21/20/car-6761801__340.jpg\",\n        \"categoria\": {\n            \"categorias_id\": 3,\n            \"titulo\": \"Economico\",\n            \"descripcion\": \"descapotable negro\",\n            \"url_imagen\": \"url\"\n        },\n        \"ciudad\": {\n            \"ciudades_id\": 1,\n            \"nombre\": \"Rosario\",\n            \"nombre_pais\": \"Argentina\"\n            },\n        \"puntuaciones\": 8,\n         \"listadeimagenes\": [\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2017/10/22/11/50/audi-2877588__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://loscoches.com/wp-content/uploads/2021/10/03-Audi-A4-Los-Coches.jpg.webp\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://loscoches.com/wp-content/uploads/2021/05/3-Audi-Q5-Los-Coches-2021.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2017/10/22/11/50/audi-2877588__340.jpg\" \n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2017/09/03/16/32/transport-2711020__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2021/01/12/14/48/audi-5911634__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2016/11/29/06/46/audi-1867882__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2018/02/21/13/17/audi-rs7-3170303__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2017/04/05/21/38/car-2206415__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2018/03/17/16/28/audi-3234422__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2016/11/29/06/46/audi-1867882__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2016/12/03/11/48/car-1879632__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2016/09/01/15/01/car-1636303__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2017/09/03/16/32/transport-2711020__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2017/06/26/07/42/audi-2442981__340.jpg\"\n\t\t                }\n\t\t                      ]\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "fdb948c2-6898-4edf-9ae9-38b9cbb2af13",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "productos/7",
+      "responses": [
+        {
+          "uuid": "fbea7680-67c9-4929-b55c-7c0ff72d97f2",
+          "body": "{\n  \"productos_id\": 7,\n        \"nombre\": \"Renault Logan\",\n        \"descripcion\": \"En el corazón de San Telmo, disfruta de un albergue inspirado en las pasiones de Buenos Aires.\",\n        \"url_producto\": \"https://cdn.pixabay.com/photo/2021/11/01/21/20/car-6761801__340.jpg\",\n        \"categoria\": {\n            \"categorias_id\": 4,\n            \"titulo\": \"Electrico\",\n            \"descripcion\": \"descapotable negro\",\n            \"url_imagen\": \"url\"\n        },\n        \"ciudad\": {\n            \"ciudades_id\": 1,\n            \"nombre\": \"Rosario\",\n            \"nombre_pais\": \"Argentina\"\n            },\n        \"puntuaciones\": 8,\n         \"listadeimagenes\": [\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2017/10/22/11/50/audi-2877588__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://loscoches.com/wp-content/uploads/2021/10/03-Audi-A4-Los-Coches.jpg.webp\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://loscoches.com/wp-content/uploads/2021/05/3-Audi-Q5-Los-Coches-2021.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2017/10/22/11/50/audi-2877588__340.jpg\" \n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2017/09/03/16/32/transport-2711020__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2021/01/12/14/48/audi-5911634__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2016/11/29/06/46/audi-1867882__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2018/02/21/13/17/audi-rs7-3170303__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2017/04/05/21/38/car-2206415__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2018/03/17/16/28/audi-3234422__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2016/11/29/06/46/audi-1867882__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2016/12/03/11/48/car-1879632__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2016/09/01/15/01/car-1636303__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2017/09/03/16/32/transport-2711020__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2017/06/26/07/42/audi-2442981__340.jpg\"\n\t\t                }\n\t\t                      ]\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "00a475e6-70b8-4a8c-a43f-05e30c932135",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "productos/8",
+      "responses": [
+        {
+          "uuid": "75542155-9631-411d-8824-c96097d77c38",
+          "body": "{\n  \"productos_id\": 8,\n        \"nombre\": \"Spark GT\",\n        \"descripcion\": \"En el corazón de San Telmo, disfruta de un albergue inspirado en las pasiones de Buenos Aires.\",\n        \"url_producto\": \"https://cdn.pixabay.com/photo/2021/11/01/21/20/car-6761801__340.jpg\",\n        \"categoria\": {\n            \"categorias_id\": 4,\n            \"titulo\": \"Electrico\",\n            \"descripcion\": \"descapotable negro\",\n            \"url_imagen\": \"url\"\n        },\n        \"ciudad\": {\n            \"ciudades_id\": 1,\n            \"nombre\": \"Rosario\",\n            \"nombre_pais\": \"Argentina\"\n            },\n        \"puntuaciones\": 8,\n         \"listadeimagenes\": [\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2017/10/22/11/50/audi-2877588__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://loscoches.com/wp-content/uploads/2021/10/03-Audi-A4-Los-Coches.jpg.webp\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://loscoches.com/wp-content/uploads/2021/05/3-Audi-Q5-Los-Coches-2021.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2017/10/22/11/50/audi-2877588__340.jpg\" \n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2017/09/03/16/32/transport-2711020__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2021/01/12/14/48/audi-5911634__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2016/11/29/06/46/audi-1867882__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2018/02/21/13/17/audi-rs7-3170303__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2017/04/05/21/38/car-2206415__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2018/03/17/16/28/audi-3234422__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2016/11/29/06/46/audi-1867882__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2016/12/03/11/48/car-1879632__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2016/09/01/15/01/car-1636303__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2017/09/03/16/32/transport-2711020__340.jpg\"\n\t\t                },\n\t\t                {\n\t\t\t              \"url\": \"https://cdn.pixabay.com/photo/2017/06/26/07/42/audi-2442981__340.jpg\"\n\t\t                }\n\t\t                      ]\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "187ce952-b3b4-4c9f-b59a-a90fd17908be",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "categorias",
+      "responses": [
+        {
+          "uuid": "bac03364-4a2d-4db4-b986-c0a1de4e2c97",
+          "body": "[\r\n{\"categorias_id\": 1, \"titulo\":\"Deportivo\",\"descripcion\":\"descapotable negro\",\"url_imagen\":\"https://loscoches.com/wp-content/uploads/2021/10/1-AUDI-Q5-SPORTBACK-2021-LOS-COCHES.jpg\"},\r\n{\"categorias_id\": 2, \"titulo\":\"Lujoso\",\"descripcion\":\"descapotable negro\",\"url_imagen\":\"https://loscoches.com/wp-content/uploads/2020/12/01-AUDI-Q7-2021-LOS-COCHES.jpg.webp\"},\r\n{\"categorias_id\": 3, \"titulo\":\"Económico\",\"descripcion\":\"descapotable negro\",\"url_imagen\":\"https://loscoches.com/wp-content/uploads/2021/10/1-AUDI-A4-LOS-COCHES.jpg\"},\r\n{\"categorias_id\": 4, \"titulo\":\"Eléctrico\",\"descripcion\":\"descapotable negro\",\"url_imagen\":\"https://loscoches.com/wp-content/uploads/2020/10/Q8.jpg.webp\"}\r\n]\r\n",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "e74e2e52-20a7-4d33-bf00-152219d60b8d",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "categoria/1",
+      "responses": [
+        {
+          "uuid": "b5eaabe8-c843-4f01-8f36-932cd353d21d",
+          "body": "{\r\n\"categorias_id\": 1,\r\n\"titulo\": \"Deportivo\",\r\n\"descripcion\": \"descapotable negro\",\r\n\"url_imagen\": \"https://loscoches.com/wp-content/uploads/2021/10/1-AUDI-Q5-SPORTBACK-2021-LOS-COCHES.jpg\"\r\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "439a5ef2-98a3-43cc-8e2e-78e1dd042846",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "ciudades",
+      "responses": [
+        {
+          "uuid": "554e7ccd-bec6-4d84-8436-185a32300b24",
+          "body": "[\r\n{\"ciudades_id\": 1, \"nombre\":\"Rosario\",\"nombre_pais\":\"Argentina\"},\r\n{\"ciudades_id\": 2, \"nombre\":\"Cordoba\",\"nombre_pais\":\"Argentina\"},\r\n{\"ciudades_id\": 3, \"nombre\":\"Buenos Aires\",\"nombre_pais\":\"Argentina\"},\r\n{\"ciudades_id\": 4, \"nombre\":\"Bariloche\",\"nombre_pais\":\"Argentina\"}\r\n]\r\n",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "56562863-845e-4195-95e0-d6eb72a75915",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "ciudades/1",
+      "responses": [
+        {
+          "uuid": "13835286-3533-4610-b3d6-5f645fddf8a4",
+          "body": "{\r\n\"ciudades_id\": 1,\r\n\"nombre\": \"Rosario\",\r\n\"nombre_pais\": \"Argentina\"\r\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "20545bea-31c1-4910-93b2-3a35de86a37a",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "productos/buscarPorCiudad/1",
+      "responses": [
+        {
+          "uuid": "1c1a25f3-88ac-42c7-8bff-36f5334d2b91",
+          "body": "[\n  {\n        \"productos_id\": 1,\n        \"nombre\": \"Audi Q5\",\n        \"descripcion\": \"descripcion producto Rosario\",\n        \"categoria\": {\n            \"categorias_id\": 1,\n            \"titulo\": \"Deportivo\",\n            \"descripcion\": \"descapotable negro\",\n            \"url_imagen\": \"url\"\n        },\n        \"ciudad\": {\n            \"ciudades_id\": 1,\n            \"nombre\": \"Rosario\",\n            \"nombre_pais\": \"Argentina\"\n            }\n    },\n    {\n        \"productos_id\": 2,\n        \"nombre\": \"Audi Q7\",\n        \"descripcion\": \"descripcion producto Rosario\",\n        \"categoria\": {\n            \"categorias_id\": 1,\n            \"titulo\": \"Deportivo\",\n            \"descripcion\": \"descapotable negro\",\n            \"url_imagen\": \"url\"\n        },\n        \"ciudad\": {\n            \"ciudades_id\": 1,\n            \"nombre\": \"Rosario\",\n            \"nombre_pais\": \"Argentina\"\n            }\n    },\n    {\n    \"productos_id\": 3,\n    \"nombre\": \"Bmwl3\",\n    \"descripcion\": \"descripcion producto Cordoba\",\n    \"categoria\": {\n        \"categorias_id\": 2,\n        \"titulo\": \"Lujoso\",\n        \"descripcion\": \"descapotable negro\",\n        \"url_imagen\": \"url\"\n        },\n    \"ciudad\": {\n        \"ciudades_id\": 2,\n        \"nombre\": \"Cordoba\",\n        \"nombre_pais\": \"Argentina\"\n        }\n    },\n    {\n        \"productos_id\": 4,\n        \"nombre\": \"Kia Sportage\",\n        \"descripcion\": \"descripcion producto Rosario\",\n        \"categoria\": {\n            \"categorias_id\": 2,\n            \"titulo\": \"Lujoso\",\n            \"descripcion\": \"descapotable negro\",\n            \"url_imagen\": \"url\"\n        },\n        \"ciudad\": {\n            \"ciudades_id\": 1,\n            \"nombre\": \"Rosario\",\n            \"nombre_pais\": \"Argentina\"\n            }\n    },\n    {\n        \"productos_id\": 5,\n        \"nombre\": \"Mazda Cx 30\",\n        \"descripcion\": \"descripcion producto Rosario\",\n        \"categoria\": {\n            \"categorias_id\": 3,\n            \"titulo\": \"Economico\",\n            \"descripcion\": \"descapotable negro\",\n            \"url_imagen\": \"url\"\n        },\n        \"ciudad\": {\n            \"ciudades_id\": 1,\n            \"nombre\": \"Rosario\",\n            \"nombre_pais\": \"Argentina\"\n            }\n    },\n    {\n        \"productos_id\": 6,\n        \"nombre\": \"Nissan March\",\n        \"descripcion\": \"descripcion producto Rosario\",\n        \"categoria\": {\n            \"categorias_id\": 3,\n            \"titulo\": \"Economico\",\n            \"descripcion\": \"descapotable negro\",\n            \"url_imagen\": \"url\"\n        },\n        \"ciudad\": {\n            \"ciudades_id\": 1,\n            \"nombre\": \"Rosario\",\n            \"nombre_pais\": \"Argentina\"\n            }\n    },\n    {\n        \"productos_id\": 7,\n        \"nombre\": \"Renault Logan\",\n        \"descripcion\": \"descripcion producto Rosario\",\n        \"categoria\": {\n            \"categorias_id\": 4,\n            \"titulo\": \"Electrico\",\n            \"descripcion\": \"descapotable negro\",\n            \"url_imagen\": \"url\"\n        },\n        \"ciudad\": {\n            \"ciudades_id\": 1,\n            \"nombre\": \"Rosario\",\n            \"nombre_pais\": \"Argentina\"\n            }\n    },\n    {\n        \"productos_id\": 8,\n        \"nombre\": \"Spark GT\",\n        \"descripcion\": \"descripcion producto Rosario\",\n        \"categoria\": {\n            \"categorias_id\": 4,\n            \"titulo\": \"Electrico\",\n            \"descripcion\": \"descapotable negro\",\n            \"url_imagen\": \"url\"\n        },\n        \"ciudad\": {\n            \"ciudades_id\": 1,\n            \"nombre\": \"Rosario\",\n            \"nombre_pais\": \"Argentina\"\n            }\n    }\n]",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "0a43d210-24d2-4ac5-918a-57024165df50",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "productos/buscarPorCategoria/1",
+      "responses": [
+        {
+          "uuid": "6190460f-9a66-43c7-9665-4df8d6d81ae6",
+          "body": "[\n  {\n        \"productos_id\": 1,\n        \"nombre\": \"Audi Q5\",\n        \"descripcion\": \"descripcion producto Rosario\",\n        \"url_producto\": \"https://cdn.pixabay.com/photo/2017/02/24/18/07/audi-a3-2095801__340.jpg\",\n        \"categoria\": {\n            \"categorias_id\": 1,\n            \"titulo\": \"Deportivo\",\n            \"descripcion\": \"descapotable negro\",\n            \"url_imagen\": \"url\"\n            \n        },\n        \"ciudad\": {\n            \"ciudades_id\": 1,\n            \"nombre\": \"Rosario\",\n            \"nombre_pais\": \"Argentina\"\n            }\n    },\n    {\n        \"productos_id\": 2,\n        \"nombre\": \"Audi Q7\",\n        \"descripcion\": \"descripcion producto Rosario\",\n        \"url_producto\": \"https://cdn.pixabay.com/photo/2015/11/07/11/52/car-tire-1031579_960_720.jpg\",\n        \"categoria\": {\n            \"categorias_id\": 1,\n            \"titulo\": \"Deportivo\",\n            \"descripcion\": \"descapotable negro\",\n            \"url_imagen\": \"url\"\n        },\n        \"ciudad\": {\n            \"ciudades_id\": 1,\n            \"nombre\": \"Rosario\",\n            \"nombre_pais\": \"Argentina\"\n            }\n    }\n]",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "4fa9129f-cff9-4c47-ac8f-3e9df6dd304a",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "productos/buscarPorCategoria/2",
+      "responses": [
+        {
+          "uuid": "f11b3bc9-be83-4650-b8c5-5dd5d0c86a87",
+          "body": "[\n  {\n    \"productos_id\": 3,\n    \"nombre\": \"Bmwl3\",\n    \"descripcion\": \"En el corazón de San Telmo, disfruta de un albergue inspirado en las pasiones de Buenos Aires.\",\n        \"url_producto\": \"https://cdn.pixabay.com/photo/2021/11/01/21/20/car-6761801__340.jpg\",\n    \"categoria\": {\n        \"categorias_id\": 2,\n        \"titulo\": \"Lujoso\",\n        \"descripcion\": \"descapotable negro\",\n        \"url_imagen\": \"url\"\n        },\n    \"ciudad\": {\n        \"ciudades_id\": 2,\n        \"nombre\": \"Cordoba\",\n        \"nombre_pais\": \"Argentina\"\n        }\n    \n},\n{\n    \"productos_id\": 3,\n    \"nombre\": \"Bmwl3\",\n    \"descripcion\": \"En el corazón de San Telmo, disfruta de un albergue inspirado en las pasiones de Buenos Aires.\",\n        \"url_producto\": \"https://cdn.pixabay.com/photo/2021/11/01/21/20/car-6761801__340.jpg\",\n    \"categoria\": {\n        \"categorias_id\": 2,\n        \"titulo\": \"Lujoso\",\n        \"descripcion\": \"descapotable negro\",\n        \"url_imagen\": \"url\"\n        },\n    \"ciudad\": {\n        \"ciudades_id\": 2,\n        \"nombre\": \"Cordoba\",\n        \"nombre_pais\": \"Argentina\"\n        }\n    \n}\n  ]",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "da5600eb-0a2b-44b5-8602-8566872e8609",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "productos/buscarPorCategoria/3",
+      "responses": [
+        {
+          "uuid": "878a8703-c042-4512-aeb2-b541b8b72860",
+          "body": "[\n\n    {\n        \"productos_id\": 5,\n        \"nombre\": \"Mazda Cx 30\",\n        \"descripcion\": \"En el corazón de San Telmo, disfruta de un albergue inspirado en las pasiones de Buenos Aires.\",\n        \"url_producto\": \"https://cdn.pixabay.com/photo/2016/12/16/17/54/bmw-1911913_960_720.jpg\",\n        \"categoria\": {\n            \"categorias_id\": 3,\n            \"titulo\": \"Económico\",\n            \"descripcion\": \"descapotable negro\",\n            \"url_imagen\": \"url\"\n        },\n        \"ciudad\": {\n            \"ciudades_id\": 1,\n            \"nombre\": \"Rosario\",\n            \"nombre_pais\": \"Argentina\"\n            },\n        \"puntuaciones\": 8\n    },\n    {\n        \"productos_id\": 6,\n        \"nombre\": \"Nissan March\",\n        \"descripcion\": \"En el corazón de San Telmo, disfruta de un albergue inspirado en las pasiones de Buenos Aires.\",\n        \"url_producto\": \"https://cdn.pixabay.com/photo/2015/12/19/10/32/seat-cushion-1099624_960_720.jpg\",\n        \"categoria\": {\n            \"categorias_id\": 3,\n            \"titulo\": \"Económico\",\n            \"descripcion\": \"descapotable negro\",\n            \"url_imagen\": \"url\"\n        },\n        \"ciudad\": {\n            \"ciudades_id\": 1,\n            \"nombre\": \"Rosario\",\n            \"nombre_pais\": \"Argentina\"\n            },\n        \"puntuaciones\": 8\n    }\n]",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "1d2f80e3-900a-4e99-91ea-95dfbc1dd565",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "productos/buscarPorCategoria/4",
+      "responses": [
+        {
+          "uuid": "b100fedc-3203-4f40-b6fd-1c9031217598",
+          "body": "[\n    {\n        \"productos_id\": 7,\n        \"nombre\": \"Renault Logan\",\n        \"descripcion\": \"En el corazón de San Telmo, disfruta de un albergue inspirado en las pasiones de Buenos Aires.\",\n        \"url_producto\": \"https://cdn.pixabay.com/photo/2021/07/01/14/31/car-6379534_960_720.jpg\",\n        \"categoria\": {\n            \"categorias_id\": 4,\n            \"titulo\": \"Eléctrico\",\n            \"descripcion\": \"descapotable negro\",\n            \"url_imagen\": \"url\"\n        },\n        \"ciudad\": {\n            \"ciudades_id\": 1,\n            \"nombre\": \"Rosario\",\n            \"nombre_pais\": \"Argentina\"\n            },\n        \"puntuaciones\": 8\n    },\n    {\n        \"productos_id\": 8,\n        \"nombre\": \"Spark GT\",\n        \"descripcion\": \"En el corazón de San Telmo, disfruta de un albergue inspirado en las pasiones de Buenos Aires.\",\n        \"url_producto\": \"https://media.istockphoto.com/photos/japanese-middle-aged-woman-using-car-navigation-system-picture-id1312719086?b=1&k=20&m=1312719086&s=170667a&w=0&h=HENi9F8quwpq4UoCtcgH_vN1_5Pl2tQuu_2zusRgoxo=\",\n        \"categoria\": {\n            \"categorias_id\": 4,\n            \"titulo\": \"Eléctrico\",\n            \"descripcion\": \"descapotable negro\",\n            \"url_imagen\": \"url\"\n        },\n        \"ciudad\": {\n            \"ciudades_id\": 1,\n            \"nombre\": \"Rosario\",\n            \"nombre_pais\": \"Argentina\"\n            },\n        \"puntuaciones\": 8\n    }\n]",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "d50f8599-34f7-410a-b4ed-95e5cfa15dc8",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "categoria/2",
+      "responses": [
+        {
+          "uuid": "6c8cc7e7-a4a7-4f13-8d64-b046f34fae62",
+          "body": "{\"categorias_id\": 2, \"titulo\":\"Lujoso\",\"descripcion\":\"descapotable negro\",\"url_imagen\":\"https://loscoches.com/wp-content/uploads/2020/12/01-AUDI-Q7-2021-LOS-COCHES.jpg.webp\"}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "333e627c-451a-447e-bcb4-1d26aac137e2",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "categoria/3",
+      "responses": [
+        {
+          "uuid": "178ce540-7b17-46b6-bdbe-14fe073bb16e",
+          "body": "{\"categorias_id\": 3, \"titulo\":\"Económico\",\"descripcion\":\"descapotable negro\",\"url_imagen\":\"https://loscoches.com/wp-content/uploads/2021/10/1-AUDI-A4-LOS-COCHES.jpg\"}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "fe4421ab-a0bc-4767-bd6c-28b1a70d1e47",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "categoria/4",
+      "responses": [
+        {
+          "uuid": "ae74ad08-cf27-4c4e-8f28-35a4223a5167",
+          "body": "{\"categorias_id\": 4, \"titulo\":\"Eléctrico\",\"descripcion\":\"descapotable negro\",\"url_imagen\":\"https://loscoches.com/wp-content/uploads/2020/10/Q8.jpg.webp\"}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    }
+  ],
+  "proxyMode": false,
+  "proxyHost": "",
+  "proxyRemovePrefix": false,
+  "https": false,
+  "cors": true,
+  "headers": [
+    {
+      "key": "Content-Type",
+      "value": "application/json"
+    },
+    {
+      "key": "Access-Control-Allow-Origin",
+      "value": "*"
+    },
+    {
+      "key": "Access-Control-Allow-Methods",
+      "value": "GET,POST,PUT,PATCH,DELETE,HEAD,OPTIONS"
+    },
+    {
+      "key": "Access-Control-Allow-Headers",
+      "value": "Content-Type, Origin, Accept, Authorization, Content-Length, X-Requested-With"
+    }
+  ],
+  "proxyReqHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ],
+  "proxyResHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ]
+}

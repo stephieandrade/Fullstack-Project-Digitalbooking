@@ -1,0 +1,48 @@
+.custom-calendar2.rmdp-wrapper {
+  padding: 50px 100px;
+  width: 100%;
+}
+
+/* Espacio entre cada uno de los meses*/
+.rmdp-day-picker {
+  gap: 180px;
+}
+
+/* margin entre los días */
+.rmdp-day {
+  margin: 15px 17px;
+}
+.rmdp-week {
+  justify-content: space-around;
+}
+
+/* Fuente del texto de días */
+.rmdp-day span,
+.rmdp-header-values span,
+.rmdp-week-day {
+  font-size: 20px;
+  font-weight: 700;
+}
+.rmdp-week-day {
+  color: #545776;
+}
+.rmdp-day {
+  color: #bebebe;
+}
+
+.rmdp-calendar {
+  height: 330px;
+}
+
+.rmdp-container .custom-calendar2.ep-arrow[direction="bottom"] {
+  border-top: 1px solid bisque;
+}
+
+.rmdp-container .custom-calendar2.ep-arrow[direction="top"] {
+  border-bottom: 1px solid bisque;
+}
+
+@media screen and (max-width: 820px) {
+}
+@media screen and (max-width: 640px) {
+}

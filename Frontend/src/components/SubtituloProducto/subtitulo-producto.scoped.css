@@ -1,0 +1,32 @@
+div.contenedor-subtitulo {
+  display: flex;
+  justify-content: center;
+  background-color: #e5e5e5;
+}
+
+.subtitulo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #e5e5e5;
+  gap: 13px;
+  padding: 7px;
+  padding-left: var(--margin-mobile);
+  padding-right: var(--margin-mobile);
+  width: 100%;
+  max-width: 1368px;
+}
+
+@media screen and (min-width: 768px) {
+  .subtitulo {
+    padding-left: var(--margin-tablet);
+    padding-right: var(--margin-tablet);
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .subtitulo {
+    padding-left: var(--margin-desktop);
+    padding-right: var(--margin-desktop);
+  }
+}

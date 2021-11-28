@@ -1,0 +1,157 @@
+/***** BLOQUE POLITICAS *****/
+
+div.contenedor-politicas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 40px;
+}
+
+/* El título de los bloques muestra la línea azul de borde a borde en Mobile en página de reservas */
+p.titulo {
+  margin: 0px -10px 20px;
+  padding: 10px 10px 10px 10px;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--two-color);
+
+  margin-left: calc(var(--margin-mobile) * -1);
+  margin-right: calc(var(--margin-mobile) * -1);
+  padding-left: var(--margin-mobile);
+  padding-right: var(--margin-mobile);
+}
+p.subrayado {
+  border-bottom: 1px solid;
+  border-color: var(--one-color);
+}
+
+.reservas {
+  display: flex;
+  flex-direction: column;
+  background-color: #e5e5e5;
+  padding-bottom: 2.688rem;
+}
+
+.tituloReserva {
+  color: hsl(234, 22%, 28%);
+  padding-left: 4%;
+  text-align: justify;
+  font-weight: bold;
+  font-size: 1.25rem;
+  line-height: 1.438rem;
+  padding-top: 1.938rem;
+  padding-bottom: 1.938rem;
+  background-color: #e5e5e5;
+  margin: 0px;
+}
+.tituloReserva.Cal{
+  padding-left: 1%;
+}
+.tituloReserva.Hora{
+  padding-left: 1%;
+}
+.bgPolitica {
+  background-color: #fff;
+}
+
+/* css para el contenedor del selector de hora */
+.contenedorReservaHora {
+  background: #FFFFFF;
+  border: 1px solid #DFE4EA;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 8px;
+  padding: 17px;
+  margin-left: 0.813rem;
+  margin-right: 0.813rem;
+  
+}
+.contenedorImg {
+  display: flex;
+  gap: 13px;
+}
+
+.contenedorImg img {
+  width: 20px;
+  height: 20px;
+}
+
+.contenedorImg h5 {
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 16px;
+  color: #383B58;
+}
+.contenedorReservaHora p {
+  font-weight: 500;
+font-size: 12px;
+line-height: 14px;
+color: #383B58;
+padding-top: 15px;
+padding-bottom: 10px;
+}
+
+div.reservaCalendario{
+  /* display: flex; */
+  justify-content: center;
+  width: 96%;
+  margin-left: 2%; 
+  margin-right: 1%;
+}
+/* fin de css de selector de hora */
+
+@media screen and (min-width: 768px) {
+  /* El título de los bloques muestra la línea azul de borde a borde en Tablet en página de reservas */
+  /* p.titulo {
+    margin-left: calc(var(--margin-tablet) * -1);
+    margin-right: calc(var(--margin-tablet) * -1);
+    padding-left: var(--margin-tablet);
+    padding-right: var(--margin-tablet);
+  } */
+}
+/* css para el calendario en reserva */
+
+
+/* .reservaCalendario{
+  margin-left: 0.813rem; 
+  margin-right: 0.813rem;
+  display: flex;
+  align-items: center;
+  width: 97%;
+} */
+
+
+@media screen and (min-width: 992px) {
+  /* El título de los bloques muestra la línea azul de borde a borde (hasta max-width) en Desktop en página de reservas */
+  p.titulo {
+    margin-left: calc(var(--margin-desktop) * -1);
+    margin-right: calc(var(--margin-desktop) * -1);
+    padding-left: var(--margin-desktop);
+    padding-right: var(--margin-desktop);
+  }
+  .reservas {
+    flex-direction: row;
+
+    width: 100%;
+    padding-left: 2.688rem;
+    padding-right: 2.688rem;
+  }
+
+  .contenedorForm {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+  }
+
+  .contenedorDetalle {
+    display: flex;
+    justify-content: flex-end;
+    width: 30%;
+  }
+
+  .tituloReserva {
+    font-size: 1.5rem;
+  }
+  div.reservaCalendario{
+    display: flex;
+  }
+}

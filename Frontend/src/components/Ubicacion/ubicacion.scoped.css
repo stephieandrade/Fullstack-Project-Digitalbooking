@@ -1,0 +1,30 @@
+.ubicacion {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-top: 15px;
+}
+
+.detalles {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+span {
+  line-height: 18px;
+}
+
+span.distancia {
+  font-weight: 500;
+  color: var(--two-color);
+}
+
+span.mapa {
+  color: var(--one-color);
+  font-weight: 500;
+}
+
+.iconos {
+  display: flex;
+  gap: 10px;
+}

@@ -1,0 +1,89 @@
+div.bloque {
+  padding: 10px 0px 10px 0px;
+  align-items: center;
+}
+
+/* Estilo para cuando el bloque es de tipo categorias */
+.bloque.categorias {
+  background-color: var(--five-color);
+  color: var(--two-color);
+}
+
+/* Estilo para cuando el bloque es de tipo recomendaciones */
+.bloque.recomendaciones {
+  background-color: var(--two-color);
+  color: var(--five-color);
+}
+
+/* Estilo para cuando el bloque es de tipo caracteristicas de página Producto*/
+.bloque.caracteristicas {
+  background-color: var(--five-color);
+  color: var(--two-color);
+}
+
+/* Estilo para cuando el bloque es de tipo fechas de página Producto*/
+.bloque.fechas {
+  background-color: #ebebeb;
+  color: var(--two-color);
+}
+
+/* Estilo para cuando el bloque es de tipo ubicacion de página Producto*/
+.bloque.ubicacion {
+  background-color: var(--five-color);
+  color: var(--two-color);
+}
+
+/* Estilo para cuando el bloque es de tipo politicas de página Producto*/
+.bloque.politicas {
+  background-color: var(--five-color);
+  color: var(--two-color);
+}
+
+/* Estilo para cuando el bloque es de tipo descripcion de página Producto*/
+.bloque.descripcion {
+  background-color: var(--five-color);
+  color: var(--two-color);
+}
+
+/* Estilo para cuando el bloque es de tipo login de página Login*/
+.bloque.login {
+  background-color: var(--five-color);
+  color: var(--two-color);
+  justify-content: center;
+  height: 100%;
+}
+
+/* Estilo para cuando el bloque es de tipo slider en página Producto*/
+.bloque.slider {
+  background-color: var(--five-color);
+  color: var(--two-color);
+  justify-content: center;
+  height: 100%;
+}
+
+/* Contenedor del bloque */
+.contenedor-bloque {
+  width: 100%;
+  padding: 10px 10px 10px 10px;
+}
+
+/* TABLET */
+@media screen and (min-width: 768px) {
+  .bloque.recomendaciones {
+    background-color: #ebebeb;
+  }
+
+  /* Contenedor del bloque */
+  .contenedor-bloque {
+    width: 100%;
+    padding: 30px;
+  }
+}
+
+/* DESKTOP*/
+@media screen and (min-width: 992px) {
+  .contenedor-bloque {
+    padding: 0 40px 0 40px;
+    max-width: 1368px;
+  }
+}

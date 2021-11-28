@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header debería mostrar <Header /> correctamente  1`] = `
+Array [
+  " ",
+  <header>
+    <div
+      className="contenedor-header"
+    >
+      <div
+        className="logo"
+      >
+        <a
+          href="/"
+          onClick={[Function]}
+        >
+          <img
+            alt="Logo"
+            src="logo.png"
+          />
+        </a>
+        <p>
+          Rent your car
+        </p>
+      </div>
+      
+    </div>
+  </header>,
+  " ",
+]
+`;

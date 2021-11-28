@@ -1,0 +1,90 @@
+.reserva {
+  width: 100%;
+  display: flex;
+}
+.reserva.rmdp-wrapper {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+.reserva .rmdp-calendar {
+  width: 100%;
+}
+.reserva1 .rmdp-day.rmdp-range {
+  background-color: var(--one-color);
+  border-radius: 50%;
+  color: #fff;
+}
+
+.reserva .rmdp-day-picker {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+}
+.reserva .rmdp-day {
+  margin: 7px;
+  width: 34px;
+  height: 34px;
+}
+.reserva .rmdp-day.rmdp-selected span:not(.highlight) {
+  color: black;
+  background-color: var(--one-color);
+}
+.reserva .rmdp-day span,
+.reserva .rmdp-header-values span,
+.reserva .rmdp-week-day {
+  font-size: 20px;
+}
+.reserva .rmdp-week-day {
+  color: var(--one-color);
+}
+
+.reserva .rmdp-header {
+  padding-top: 10px;
+}
+.reserva .rmdp-day.rmdp-today span {
+  background-color: #1dbeb4;
+  color: #fff;
+  width: 28px;
+}
+.reserva .rmdp-day.rmdp-selected span:not(.highlight) {
+  background-color: #1dbeb4;
+  box-shadow: 0 0 3px #1dbeb4;
+  color: #fff;
+  width: 28px;
+}
+
+@media (min-width: 768px) {
+  */ .reserva .rmdp-calendar {
+    width: 100%;
+  }
+
+  .reserva .rmdp-day-picker {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+  }
+
+  .reserva .rmdp-header {
+    padding-top: 10px;
+  }
+  .reserva .rmdp-day.rmdp-today span {
+    background-color: #1dbeb4;
+    color: #fff;
+    width: 28px;
+  }
+  .reserva .rmdp-day.rmdp-selected span:not(.highlight) {
+    background-color: #1dbeb4;
+    box-shadow: 0 0 3px #1dbeb4;
+    color: #fff;
+    width: 28px;
+  }
+}
+/**--------------MODELO ADAPTATIVO PC---------------*/
+
+@media (min-width: 992px) {
+  .reserva.rmdp-wrapper {
+    width: auto;
+    justify-content: center;
+  }
+}

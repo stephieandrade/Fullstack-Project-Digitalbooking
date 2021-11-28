@@ -1,0 +1,39 @@
+.contenedor-cards {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  gap: 10px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(393px, 1fr));
+}
+
+.contenedor-categorias {
+  display: flex;
+  justify-content: center;
+  padding-top: 9px;
+  gap: 13px;
+  flex-wrap: wrap;
+}
+
+/* Título del bloque */
+p.titulo {
+  font-size: 24px;
+  text-align: left;
+  font-weight: 700;
+}
+
+@media screen and (min-width: 768px) {
+  .contenedor-cards {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  p.titulo {
+    color: var(--two-color);
+    padding-left: 20px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .contenedor-cards {
+    grid-template-columns: repeat(auto-fit, minmax(635px, 1fr));
+  }
+}

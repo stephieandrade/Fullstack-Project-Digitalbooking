@@ -1,0 +1,21 @@
+p {
+  font-weight: 500;
+  color: var(--three-color);
+  font-size: 14px;
+}
+.contenedor-iconos {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.contenedor-icono {
+  display: flex;
+  gap: 7px;
+}
+
+@media screen and (min-width: 992px) {
+  .contenedor-iconos {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

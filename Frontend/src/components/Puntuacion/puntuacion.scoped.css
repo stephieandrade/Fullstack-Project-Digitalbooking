@@ -1,0 +1,59 @@
+.calificacion {
+  display: flex;
+  justify-content: space-between;
+}
+
+.contenedor-estrellas {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: flex-start;
+}
+
+.contenedor-puntuacion {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: flex-end;
+}
+
+.contenedor-puntuacion span {
+  font-weight: 700;
+}
+
+.estrellas {
+  display: flex;
+  gap: 5px;
+}
+
+.estrellas span {
+  color: #383b58;
+  font-weight: 700;
+  opacity: 0.5;
+  text-transform: uppercase;
+}
+
+span.nombre {
+  color: #383b58;
+  font-weight: 700;
+  font-size: 24px;
+  text-align: left;
+}
+
+span.concepto {
+  color: var(--two-color);
+}
+
+div.puntuacion {
+  background-color: var(--two-color);
+  width: 38px;
+  height: 30px;
+  text-align: center;
+  font-size: 20px;
+  line-height: 23px;
+  color: white;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

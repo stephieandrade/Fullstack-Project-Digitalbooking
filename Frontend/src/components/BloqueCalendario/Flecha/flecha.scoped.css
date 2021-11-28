@@ -1,0 +1,122 @@
+/* div.flecha {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #1dbeb4;
+  cursor: pointer;
+  top: 120px;
+}
+
+div.flecha span {
+  color: white;
+  font-weight: bold;
+  font-size: 30px;
+}
+
+div.flecha.left {
+  left: -60px;
+}
+
+div.flecha.right {
+  right: -60px;
+}
+
+@media screen and (max-width: 1050px) {
+  div.flecha.left {
+    left: -10px;
+    top: 0px;
+  }
+  
+  div.flecha.right {
+  
+    top: 0px;
+  }
+
+  div.flecha {
+    background-color: white;
+  }
+
+  div.flecha span {
+    color: var(--two-color);
+  }
+} */
+div.flecha {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+div.flecha.left {
+  left: -10px;
+  top: 0px;
+}
+
+div.flecha.right {
+  right: -20px;
+  top: 0px;
+}
+
+div.flecha {
+  background-color: transparent;
+  font-size: 30px;
+}
+
+div.flecha span {
+  color: var(--two-color);
+}
+
+@media screen and (min-width: 768px) {
+  div.flecha {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    top: 120px;
+  }
+  
+  div.flecha span {
+    color: var(--two-color);
+    font-weight: bold;
+    font-size: 30px;
+  }
+  
+  div.flecha.left {
+    left: -10px;
+  }
+  
+  div.flecha.right {
+    right: -20px;
+  }
+
+}
+
+
+@media screen and (min-width: 992px) {
+  div.flecha {
+    background-color: #1dbeb4;
+  }
+  div.flecha.left {
+    left: -130px;
+    top: 110px;
+  }
+  
+  div.flecha.right {
+    right: -150px;
+    top: 110px;
+  }
+  div.flecha span {
+    color:white;
+  }
+  .reserva div.flecha.left {
+    left: -10%;
+    top: 100px;
+  }
+  .reserva div.flecha.right {
+    right: -10%;
+    top: 100px;
+  }
+}

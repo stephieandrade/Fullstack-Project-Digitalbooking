@@ -1,0 +1,38 @@
+.contenedorReservaHora {
+    background: #FFFFFF;
+    border: 1px solid #DFE4EA;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+    padding: 17px;
+    margin-left: 0.813rem;
+    margin-right: 0.813rem;
+    
+}
+
+.select-container .css-tj5bde-Svg {
+    color:  #1DBEB4;
+
+}
+
+.select-container div.css-1s2u09g-control{
+    background: #FFFFFF;
+box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.15);
+border-radius: 5px;
+height: 40px;
+outline: none;
+}
+
+/**--------------MODELO ADAPTATIVO TABLET---------------*/
+
+@media (min-width: 768px) {
+    .select-container   div{
+        width: 80%;
+    }
+    .select-container  .css-319lph-ValueContainer{
+        width: 100%;
+    }
+    .select-container  .css-1hb7zxy-IndicatorsContainer{
+        width: 10%;
+    }
+}

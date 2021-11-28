@@ -1,0 +1,15 @@
+.ubicacion {
+  display: flex;
+  gap: 5px;
+}
+
+.detalles {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+span {
+  line-height: 18px;
+  font-weight: 700;
+  color: var(--two-color);
+}

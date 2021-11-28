@@ -1,0 +1,69 @@
+div.contenedor-login {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.titulo-sesion {
+  display: flex;
+  color: var(--one-color);
+  font-size: 24px;
+  justify-content: center;
+  font-weight: 700;
+}
+
+.sesion-boton button {
+  width: 206px;
+  height: 40px;
+  color: #fff;
+  background-color: var(--one-color);
+  border: var(--one-color) 1px solid;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 19px;
+  transition: 240ms;
+  margin: 5%;
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+.sesion-boton button:hover {
+  color: var(--one-color);
+  background-color: var(--five-color);
+}
+
+form input {
+  border-radius: 5px;
+  height: 50px;
+  width: 440px;
+  padding-left: 10px;
+  border: 1px solid rgb(202, 201, 201);
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
+  font-size: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+form h3 {
+  text-align: left;
+  color: #383b58;
+}
+
+.registrate {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  justify-content: center;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.errorMsg {
+  color: red;
+  padding-top: 2px;
+  text-align: right;
+}

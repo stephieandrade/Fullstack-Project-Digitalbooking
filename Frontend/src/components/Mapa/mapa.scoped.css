@@ -1,0 +1,21 @@
+.mapa div{
+   padding-right: 43px;
+   padding-left: 43px;
+   border-radius: 10px;
+   padding-top: 20px;
+}
+div.MuiInputBase-root.MuiOutlinedInput-root.MuiAutocomplete-inputRoot.MuiInputBase-fullWidth.MuiInputBase-formControl.MuiInputBase-adornedEnd.MuiOutlinedInput-adornedEnd{
+    display: none;
+}
+
+ /*----------------------MODELO ADAPTATIVO MOBILE-------------------------*/
+
+ @media screen and (max-width: 640px) {
+    .mapa div{
+        padding-right: 11px;
+        padding-left: 7px;
+     }
+     div.MuiAutocomplete-root.MuiAutocomplete-hasClearIcon.MuiAutocomplete-hasPopupIcon{
+         display: none;
+     }
+ }

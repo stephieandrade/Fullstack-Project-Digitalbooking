@@ -1,0 +1,47 @@
+.click {
+  cursor: pointer;
+}
+
+.footer {
+  font-size: 22px;
+  color: var(--five-color);
+}
+
+.navbar {
+  font-size: 32px;
+  color: var(--three-color);
+}
+
+.estrella-home {
+  font-size: 12px;
+  color: var(--one-color);
+}
+
+.ubicacion {
+  font-size: 14px;
+  color: var(--three-color);
+}
+
+.login-error {
+  font-size: 34px;
+  color: var(--error-color);
+}
+
+.producto {
+  font-size: 18px;
+  color: var(--one-color);
+}
+
+.input {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 20px;
+  font-size: 24px;
+  cursor: pointer;
+  color: var(--two-color);
+}
+
+.login-error {
+  margin: 10px;
+}

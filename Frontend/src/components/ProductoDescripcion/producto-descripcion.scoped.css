@@ -1,0 +1,8 @@
+.descripcion p {
+  margin-top: 10px;
+  text-align: justify;
+  font-weight: bold;
+  color: var(--three-color);
+  line-height: 18px;
+  font-size: 14px;
+}

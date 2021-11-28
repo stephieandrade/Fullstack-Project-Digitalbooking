@@ -1,0 +1,11 @@
+a {
+  font-size: 1.2rem;
+  font-weight: bold;
+  opacity: 0.75;
+  color: white;
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  line-height: 19px;
+  text-decoration-line: underline;
+}

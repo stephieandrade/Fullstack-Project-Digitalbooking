@@ -1,0 +1,55 @@
+button {
+  cursor: pointer;
+}
+.contenedorPrincipalExitoso {
+  background-color: #e5e5e5;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.contenedorExitoso {
+  background: #ffffff;
+  border: 1px solid #dfe4ea;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 0px 0px 8px 8px;
+  text-align: center;
+  padding-bottom: 30px;
+  padding-top: 49px;
+  margin-left: 40px;
+  margin-right: 40px;
+  width: 90%;
+}
+
+.contenedorExitoso h2 {
+  color: #1dbeb4;
+}
+
+.contenedorExitoso p {
+  color: #383b58;
+  font-weight: bold;
+  font-size: 16px;
+  padding: 20px;
+}
+.contenedorExitoso button {
+  background: #1dbeb4;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.12);
+  border-radius: 5px;
+  height: 40px;
+  width: 52%;
+  border-color: transparent;
+  color: #ffffff;
+  font-weight: bold;
+  transition: 240ms;
+}
+
+.contenedorExitoso button:hover {
+  background-color: var(--three-color);
+}
+
+@media (min-width: 992px) {
+  .contenedorExitoso {
+    width: 40%;
+  }
+}

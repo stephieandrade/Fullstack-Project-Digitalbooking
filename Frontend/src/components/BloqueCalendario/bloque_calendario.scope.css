@@ -1,0 +1,200 @@
+/* div.bloque {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  padding-bottom: 50px;
+}
+
+div.fila_calendario {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  gap: 3%;
+}
+
+div.toreserva {
+  display: flex;
+  width: 40%;
+  height: 40%;
+  background-color: white;
+  border-radius: 8px;
+  border: 2px solid #dfe4ea;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  flex-direction: column;
+  padding-bottom: 1%;
+  padding-left: 1%;
+}
+
+div.toreserva p {
+  font-size: 16px;
+  font-weight: bold;
+  font-family: "roboto";
+  padding: 2%;
+  margin: auto;
+}
+
+.boton-reserva button {
+  background-color: var(--one-color);
+  color: #fff;
+  width: 95%;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.12);
+  border-radius: 5px;
+  border-color: transparent;
+  height: 40px;
+  margin-top: 12px;
+  transition: 240ms;
+  cursor: pointer;
+}
+.boton-reserva button:hover{
+  background-color: var(--three-color);
+}
+
+
+
+@media screen and (max-width: 1330px) {
+  div.fila_calendario {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 3%;
+  }  okkkk
+  div.toreserva {
+    display: flex;
+    width: 100%;
+    height: 40%;
+    flex-direction: row;
+    margin: 5%;
+    padding: 1%;
+    justify-content: space-between;
+    background-color: #ebebeb;
+    border-radius: 0px;
+    border: 0px solid #dfe4ea;
+    filter: drop-shadow(0px 0px 0px rgba(0, 0, 0, 0));
+  }okk
+  .boton-reserva button {
+    width: 100%;
+  }okk
+  .boton-reserva{
+    width: 50%;
+  }okk
+  div.pReserva{
+    width: 45%;
+  }okk
+  div.bloque{
+    padding-bottom: 0;
+    display: flex;
+  }
+} */
+div.bloque {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 100%;
+  padding-bottom: 50px;
+}
+
+div.fila_calendario {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 3%;
+}
+div.toreserva {
+  display: flex;
+  width: 100%;
+  height: 40%;
+  flex-direction: column;
+  margin: 5% 0 5% 0;
+  padding: 1%;
+  justify-content: space-between;
+  justify-self: stretch;
+  background-color: #ebebeb;
+  border-radius: 0px;
+  border: 0px solid #dfe4ea;
+  filter: drop-shadow(0px 0px 0px rgba(0, 0, 0, 0));
+}
+div.boton-reserva button {
+  width: 100%;
+}
+div.boton-reserva{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  justify-self: center;
+  align-items: center;
+}
+div.pReserva{
+  width: 100%;
+}
+div.bloque{
+  padding-bottom: 0;
+  display: flex;
+}
+.boton-reserva button {
+  background-color: var(--one-color);
+  color: #fff;
+  width: 95%;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.12);
+  border-radius: 5px;
+  border-color: transparent;
+  height: 40px;
+  margin-top: 12px;
+  transition: 240ms;
+  cursor: pointer;
+}
+.boton-reserva button:hover{
+  background-color: var(--three-color);
+}
+div.toreserva p {
+  font-size: 16px;
+  font-weight: bold;
+  font-family: "roboto";
+  padding: 0;
+
+}
+
+@media screen and (min-width: 768px) {
+
+}
+@media screen and (min-width: 992px) {
+
+  div.fila_calendario {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 2%;
+  }
+  div.toreserva {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border-radius: 8px;
+    border: 2px solid #dfe4ea;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    flex-direction: column;
+    padding: auto;
+    margin: 0;
+
+  }
+  div.toreserva p {
+    font-size: 16px;
+    font-weight: bold;
+    font-family: "roboto";
+    padding: 0;
+    margin: 0;
+  }
+  div.pReserva{
+    width: 100%;
+
+  }
+  div.boton-reserva{
+    width: 100%;
+  }
+  .boton-reserva button {
+    height: 45px;
+  }
+}

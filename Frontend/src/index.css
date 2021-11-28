@@ -1,0 +1,33 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@500;700&display=swap");
+@import url("https://cdn.syncfusion.com/ej2/material.css");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --one-color: #1dbeb4;
+  --two-color: #383b58;
+  --three-color: #545776;
+  --four-color: #f3f1ed;
+  --five-color: #ffffff;
+  --error-color: #b00020;
+
+  --margin-mobile: 10px;
+  --margin-tablet: 30px;
+  --margin-desktop: 40px;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+html {
+  font-size: 16px;
+}
+
+a {
+  text-decoration: none;
+}

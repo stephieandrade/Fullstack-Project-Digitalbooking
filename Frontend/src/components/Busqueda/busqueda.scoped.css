@@ -1,0 +1,168 @@
+/**----------------------ESTILOS section buscar-ofertar-------------------------*/
+
+.buscar-ofertar {
+  background-color: var(--three-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 2rem;
+  padding-top: 1rem;
+}
+
+div.ant-picker {
+  width: 100%;
+  border-radius: 5px;
+  height: 38px;
+}
+
+.ant-picker-input {
+  padding-left: 20px;
+}
+
+h1.buscaOferta {
+  color: var(--five-color);
+  padding-top: 20px;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 42, 19px;
+  text-align: center;
+}
+
+.buscador {
+  width: 100%;
+  padding-top: 23px;
+  display: flex;
+  gap: 17px;
+  justify-content: center;
+  flex-direction: column;
+  padding-left: var(--margin-mobile);
+  padding-right: var(--margin-mobile);
+}
+
+.select {
+  width: 100%;
+  border-radius: 5px;
+  outline: none;
+  border-color: transparent;
+}
+
+.css-14dclt2-Input::before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f3c5";
+  color: #545776;
+  display: inline-block;
+  right: auto;
+  font-size: 18px;
+  visibility: visible;
+}
+
+div.ant-picker.ant-picker-range path {
+  color: #545776;
+}
+
+.css-1hb7zxy-IndicatorsContainer path {
+  color: #545776;
+}
+
+.buscador button {
+  width: 100%;
+  height: 38px;
+  border-radius: 5px;
+  background-color: var(--one-color);
+  color: white;
+  outline: none;
+  border-color: transparent;
+  cursor: pointer;
+}
+.buscador button:hover{
+  background-color: lightgray;
+}
+/* .buscador button:disabled {
+  background-color: lightgray;
+} */
+
+.buscador button::placeholder {
+  color: #e5e5e5;
+}
+
+.ant-picker-cell-inner {
+  border: var(--two-color) 1px solid;
+  color: #fff;
+}
+
+/**-------MODIFICAR CALENDARIO----------------**/
+
+div.ant-picker-cell-inner {
+  color: white;
+  /* background: white; */
+  border: transparent;
+}
+
+/**-------MODELO ADAPTATIVO TABLET----------------**/
+
+@media screen and (min-width: 768px) {
+  .buscador {
+    flex-direction: row;
+  }
+
+  .buscar-ofertar {
+    padding: 40px;
+  }
+  .buscador .ciudad {
+    flex: 2;
+  }
+  .buscador .fechas {
+    flex: 2;
+  }
+
+  .buscador #btn-buscador {
+    flex: 1;
+  }
+
+  h1 {
+    font-size: 1.87rem;
+    padding-left: 5rem;
+    padding-right: 5rem;
+  }
+}
+
+/**-------MODELO ADAPTATIVO MOBILE----------------**/
+
+@media screen and (min-width: 992px) {
+  .buscador {
+    max-width: 1068px;
+  }
+}
+/*
+@media screen and (max-width: 992px) {
+  button {
+    width: 100%;
+    height: 37px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .calendario {
+    width: 100%;
+    height: 37px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .select {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  div.ant-picker {
+    width: 100%;
+  }
+
+  h1 {
+    line-height: 35, 16px;
+    padding: 28px 11px 11px 9px;
+  }
+}
+*/

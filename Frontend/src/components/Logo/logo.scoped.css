@@ -1,0 +1,18 @@
+.logo {
+  display: flex;
+  align-items: flex-end;
+  gap: 12px;
+}
+
+p {
+  display: none;
+  font-style: italic;
+  font-weight: 300;
+  color: var(--three-color);
+}
+
+@media screen and (min-width: 768px) {
+  p {
+    display: block;
+  }
+}

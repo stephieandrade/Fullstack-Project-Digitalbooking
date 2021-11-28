@@ -1,0 +1,203 @@
+{
+	"info": {
+		"_postman_id": "50c94e4a-3833-4886-9b1a-d0cc905e0dca",
+		"name": "SPRINT 3- usuarios, reservas",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8085/usuarios",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"usuarios_id\": \"1\",\r\n    \"nombre\": \"Maria\", \r\n    \"apellido\": \"Lopez\",\r\n    \"email\": \"maria@mail.com\",\r\n    \"password\": \"malopez\",\r\n    \"puntuaciones\":null,\r\n    \"listadereservas\":null\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8085/usuarios",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"usuarios"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login jwt",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"brenda@mail.com\",\r\n  \"password\": \"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8085/usuarios/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"usuarios",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8085/reservas",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJicmVuZGFAbWFpbC5jb20iLCJleHAiOjE2Mzc3MDU0NTIsIm5vbWJyZSI6IkJyZW5kYSBBY29zdGEiLCJpYXQiOjE2Mzc2Njk0NTJ9.nMwcinh_B6qVweFrGqHuOnWgvWu2KNFhyQkIaQtEhgo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"reservas_id\": 1,\r\n  \"fechaInicial\": \"2021-12-01\",\r\n  \"fechaFinal\": \"2021-12-02\",\r\n  \"horaDeReserva\": \"12.00\",\r\n  \"productosId\": 1,\r\n  \"usuarios_id\": 2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8085/reservas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"reservas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "buscarPorIdProducto/{id}",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJicmVuZGFAbWFpbC5jb20iLCJleHAiOjE2Mzc3MDA1MjQsIm5vbWJyZSI6IkJyZW5kYSBBY29zdGEiLCJpYXQiOjE2Mzc2NjQ1MjR9.Q2KkUtHtqwD26K4C494T-hWH8sQM3SMnycb4QRtYZh0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n  {\r\n    \"fechaInicial\": \"2021-12-01\",\r\n    \"fechaFinal\": \"2021-12-02\",\r\n    \"horaDeReserva\": \"12.00\",\r\n    \"productosId\": 1,\r\n    \"reservas_id\": 1,\r\n    \"usuarios_id\": 2\r\n  }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8085/reservas/buscarPorIdProducto/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"reservas",
+						"buscarPorIdProducto",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJicmVuZGFAbWFpbC5jb20iLCJleHAiOjE2Mzc3MDA1MjQsIm5vbWJyZSI6IkJyZW5kYSBBY29zdGEiLCJpYXQiOjE2Mzc2NjQ1MjR9.Q2KkUtHtqwD26K4C494T-hWH8sQM3SMnycb4QRtYZh0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8085/reservas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"reservas"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

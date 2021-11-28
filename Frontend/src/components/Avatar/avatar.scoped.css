@@ -1,0 +1,76 @@
+/* El avatar no se muestra en mobile*/
+div.avatar {
+  display: none;
+}
+
+/* En Mobile al pasar esta clase se hace visible el Avatar solo dentro del Navbar*/
+div.visible {
+  display: flex;
+  justify-content: flex-end;
+  background-color: var(--one-color);
+  padding-right: 10px;
+  padding-bottom: 10px;
+}
+
+/* Contenedor del Avatar*/
+div.contenedor {
+  display: flex;
+  gap: 10px;
+  align-items: flex-end;
+  flex-direction: column;
+}
+/* Contenedor de Hola y Nombre */
+div.texto {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 18px;
+}
+/* Texto:  Hola,*/
+div.texto .saludo {
+  color: var(--five-color);
+}
+/* Texto:  ${nombre}  */
+div.texto .nombre {
+  color: var(--two-color);
+}
+
+/* En mobile, el botón cerrar sesión del Avatar no se usa */
+div.close-session {
+  display: none;
+  align-self: flex-end;
+  font-weight: 700;
+}
+
+/* CONFIGURA EL AVATAR EN DESKTOP/TABLET */
+@media screen and (min-width: 768px) {
+  /* Muestra el Avatar en Tablet/Desktop */
+  div.avatar {
+    display: flex;
+    flex-direction: column;
+  }
+  /* color de saludo*/
+  div.texto .saludo {
+    color: black;
+    opacity: 0.5;
+  }
+  /* color de nombre */
+  div.texto .nombre {
+    color: #1dbeb4;
+  }
+  /* Alineación de textos */
+  div.texto {
+    align-items: flex-start;
+  }
+
+  div.contenedor {
+    flex-direction: row;
+  }
+  div.close-session {
+    display: block;
+    cursor: pointer;
+  }
+}

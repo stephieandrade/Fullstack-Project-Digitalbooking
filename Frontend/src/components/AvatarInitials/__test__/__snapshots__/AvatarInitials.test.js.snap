@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pruebas en <AvatarInitials/> Dos iniciales en mayúscula para dos nombres 1`] = `
+<div
+  className="initials"
+>
+  <p
+    className="text"
+  >
+    DF
+  </p>
+</div>
+`;
+
+exports[`Pruebas en <AvatarInitials/> Dos iniciales en mayúscula para tres nombres 1`] = `
+<div
+  className="initials"
+>
+  <p
+    className="text"
+  >
+    DF
+  </p>
+</div>
+`;
+
+exports[`Pruebas en <AvatarInitials/> Una inicial en mayúscula para un nombre 1`] = `
+<div
+  className="initials"
+>
+  <p
+    className="text"
+  >
+    D
+  </p>
+</div>
+`;

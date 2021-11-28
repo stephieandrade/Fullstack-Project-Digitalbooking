@@ -1,0 +1,45 @@
+.contenedor-politica {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 50px;
+  font-weight: 500;
+}
+
+.contenedor-politica h2 {
+  color: var(--three-color);
+  font-weight: bold;
+}
+.contenedor-politica p {
+  margin-top: 0px;
+  text-align: justify;
+  color: var(--two-color);
+  line-height: 18px;
+  font-size: 1rem;
+}
+
+/*----------------------MODELO ADAPTATIVO TABLET-------------------------*/
+@media screen and (min-width: 768px) {
+  .contenedor-politica {
+  }
+
+  .contenedor-politica div {
+    text-align: justify;
+    width: 20%;
+    padding-top: 30px;
+  }
+}
+/*----------------------MODELO ADAPTATIVO MOBILE-------------------------*/
+
+@media screen and (min-width: 992px) {
+  .contenedor-politica {
+    flex-direction: column;
+  }
+  .contenedor-politica div {
+    width: 80%;
+  }
+  .descripcionPolitica {
+    padding-left: 11px;
+    padding-right: 11px;
+  }
+}
