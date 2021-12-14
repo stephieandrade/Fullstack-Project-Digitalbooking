@@ -31,7 +31,7 @@ export default function ReservaDetalle({ data }) {
         </div>
 
         {data && data.ciudad && (
-          <p>
+          <p className="ciudad">
             {" "}
             <Icono
               className="fas fa-map-marker"

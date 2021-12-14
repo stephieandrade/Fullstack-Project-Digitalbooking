@@ -35,9 +35,10 @@ COLLATE = utf8mb4_0900_ai_ci;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `digitalbooking`.`categorias` (
   `categorias_id` BIGINT NOT NULL AUTO_INCREMENT,
+  `cantidad_productos` INT NULL DEFAULT NULL,
   `descripcion` VARCHAR(255) NOT NULL,
   `titulo` VARCHAR(50) NOT NULL,
-  `url_imagen` VARCHAR(255) NULL DEFAULT NULL,
+  `url_imagen` VARCHAR(255) NOT NULL,
   PRIMARY KEY (`categorias_id`),
   UNIQUE INDEX `UK_ovtw43omtmum2ljucdt7bgo34` (`titulo` ASC) VISIBLE)
 ENGINE = InnoDB
@@ -65,8 +66,12 @@ COLLATE = utf8mb4_0900_ai_ci;
 CREATE TABLE IF NOT EXISTS `digitalbooking`.`productos` (
   `productos_id` BIGINT NOT NULL AUTO_INCREMENT,
   `descripcion` VARCHAR(255) NOT NULL,
+  `direccion` VARCHAR(255) NOT NULL,
   `nombre` VARCHAR(50) NOT NULL,
-  `categorias_id` BIGINT NOT NULL,
+  `normas` VARCHAR(255) NULL DEFAULT NULL,
+  `politica_cancelacion` VARCHAR(255) NULL DEFAULT NULL,
+  `saludyseguridad` VARCHAR(255) NULL DEFAULT NULL,
+  `categorias_id` BIGINT NULL DEFAULT NULL,
   `ciudades_id` BIGINT NOT NULL,
   PRIMARY KEY (`productos_id`),
   INDEX `FKstfxoqd4ovfw6208wypspgf9n` (`categorias_id` ASC) VISIBLE,
@@ -87,9 +92,9 @@ COLLATE = utf8mb4_0900_ai_ci;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `digitalbooking`.`imagenes` (
   `imagenes_id` BIGINT NOT NULL AUTO_INCREMENT,
+  `productos_id` BIGINT NULL DEFAULT NULL,
   `titulo` VARCHAR(100) NOT NULL,
   `url_imagen` VARCHAR(300) NOT NULL,
-  `productos_id` BIGINT NOT NULL,
   PRIMARY KEY (`imagenes_id`),
   INDEX `FK8mbe8b2to3lk77sdqqsljo0bl` (`productos_id` ASC) VISIBLE,
   CONSTRAINT `FK8mbe8b2to3lk77sdqqsljo0bl`

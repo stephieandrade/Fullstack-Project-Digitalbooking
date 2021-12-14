@@ -13,7 +13,7 @@ export default function Registro() {
   const { estado, setEstado } = useContext(Contexto);
 
   const [showError, setShowError] = useState(false);
-  const [errorSubmit, setErrorSubmit] = useState("");
+  const [errorSubmit, setErrorSubmit] = useState(false);
   const [, setUnsuccesMsg] = useState("none");
   const [nombre, setNombre] = useState("");
   const [nombreError, setNombreError] = useState("none");
@@ -67,17 +67,17 @@ export default function Registro() {
 
   function handleSubmit(event) {
     event.preventDefault();
-    validateForm(event);
+    let error = false;
 
     if (nombre !== "") {
     } else {
       setNombreError("Ingrese un nombre");
-      setErrorSubmit(false);
+      error = true;
     }
     if (apellido !== "") {
     } else {
       setApellidoError("Ingrese un apellido");
-      setErrorSubmit(false);
+      error = true;
     }
 
     if (email !== "") {
@@ -87,9 +87,11 @@ export default function Registro() {
 
       if (!pattern.test(email)) {
         setEmailError("Ingrese un mail valido");
+        error = true;
       }
     } else {
       setEmailError("Se requiere un email");
+      error = true;
     }
 
     if (password !== "") {
@@ -98,9 +100,11 @@ export default function Registro() {
         setPasswordError(
           "La contraseña tiene una longitud de menos de 6 caracteres"
         );
+        error = true;
       }
     } else {
       setPasswordError("Se requiere una contraseña");
+      error = true;
     }
 
     if (confirmpassword !== "") {
@@ -109,17 +113,21 @@ export default function Registro() {
         setConfirmError(
           "La contraseña y la confirmación de contraseña no coinciden"
         );
+        error = true;
       }
     } else {
       setConfirmError("Ingrese la confirmación de contraseña");
+      error = true;
     }
+
+    validateForm(error);
   }
 
-  function validateForm(e) {
-    if (errorSubmit === false || errorSubmit === "") {
+  function validateForm(error) {
+    if (error === false) {
       doRegister();
     } else {
-      setShowError(true);
+      //setShowError(true);
       setUnsuccesMsg("Ingrese los datos correctamente e intente nuevamente");
     }
   }

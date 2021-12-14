@@ -27,17 +27,17 @@ class CiudadServiceTest {
     CiudadDTO ciudadDTO2 = new CiudadDTO();
 
     @Test
-    public void test1() throws BadRequestException {
+    public void crear_ciudad() throws BadRequestException {
         //test método agregar y buscar por id
 
-        ciudadDTO.setNombre("rosario");
+        ciudadDTO.setNombre("rosario 2");
         ciudadDTO.setNombre_pais("arg");
 
         try {
             CiudadDTO ciudadAgregada = ciudadService.agregar(ciudadDTO);
             assertNotNull(ciudadAgregada);
 
-            CiudadDTO ciudadEncontrada = ciudadService.buscar(ciudadDTO.getCiudades_id());
+            CiudadDTO ciudadEncontrada = ciudadService.buscar(ciudadAgregada.getCiudades_id());
             assertNotNull(ciudadEncontrada);
 
         } catch (BadRequestException e) {
@@ -47,20 +47,26 @@ class CiudadServiceTest {
     }
 
     @Test
-    public void test2(){
+    public void listar_todas(){
         //test método listar ciudades
 
         List<CiudadDTO> ciudades = ciudadService.listarTodas();
         assertTrue(ciudades.size() >0);
     }
+    //SPRING_PROFILE=local
 
     @Test
-    public void test3() throws BadRequestException {
+    public void editar_ciudad() throws BadRequestException {
         //test método editar ciudad
 
-        ciudadDTO2.setCiudades_id(1L);
-        ciudadDTO2.setNombre("nuevo nombre de ciudad con id 1");
-        ciudadDTO2.setNombre_pais("nuevo nombre de pais a la ciudad con id 1");
+        ciudadDTO.setNombre("rosario 3");
+        ciudadDTO.setNombre_pais("arg");
+
+        CiudadDTO ciudadAgregada = ciudadService.agregar(ciudadDTO);
+
+        ciudadDTO2.setCiudades_id(ciudadAgregada.getCiudades_id());
+        ciudadDTO2.setNombre("nuevo nombre de ciudad");
+        ciudadDTO2.setNombre_pais("nuevo nombre de pais");
 
         try {
             CiudadDTO ciudadActualizada = ciudadService.editarSinId(ciudadDTO2);
@@ -74,15 +80,20 @@ class CiudadServiceTest {
     }
 
     @Test
-    public void test4() throws BadRequestException{
+    public void buscar_por_id() throws BadRequestException{
         //test método eliminar ciudad
-        try {
-            assertTrue(ciudadService.eliminar(1L));
-        } catch (BadRequestException e) {
-            e.printStackTrace();
-        }
+
+        ciudadDTO.setNombre("rosario 5");
+        ciudadDTO.setNombre_pais("arg");
+
+        CiudadDTO ciudadAgregada = ciudadService.agregar(ciudadDTO);
+
+        CiudadDTO ciudadEncontrada = ciudadService.buscar(ciudadAgregada.getCiudades_id());
+        assertTrue(ciudadEncontrada.getNombre() == ciudadEncontrada.getNombre());
 
     }
+
+
 
 
 }

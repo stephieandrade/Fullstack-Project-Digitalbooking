@@ -12,8 +12,9 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class ImagenDTO {
 
+    private Long imagenes_id;
     private String titulo;
     private String urlImagen;
-    private Producto producto;
+    private Long productos_id;
 
 }

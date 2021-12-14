@@ -2,7 +2,7 @@
 
 div.contenedor-politicas {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
   gap: 40px;
 }
 
@@ -19,6 +19,7 @@ p.titulo {
   padding-left: var(--margin-mobile);
   padding-right: var(--margin-mobile);
 }
+
 p.subrayado {
   border-bottom: 1px solid;
   border-color: var(--one-color);
@@ -48,26 +49,35 @@ p.subrayado {
   gap: 13px;
 }
 
-.audiq5 {
+.main {
   width: 49%;
   height: 441px;
   border-radius: 8px;
+
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .imagenesInternas {
   width: 51%;
   height: 441px;
   position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
 }
 
-.imagenesInternas img {
-  width: 50%;
+.imagenesInternas .img {
   border-radius: 8px;
-  height: 218.5px;
-  padding-left: 13px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
+
 .imgTop {
-  padding-top: 13px;
+  /* position: relative;
+  top: 13px; */
 }
 
 .tituloCaract {
@@ -79,6 +89,7 @@ p.subrayado {
   padding-bottom: 30px;
   font-weight: bold;
 }
+
 .imagenesInternas a {
   display: flex;
   justify-content: flex-end;
@@ -93,7 +104,6 @@ p.subrayado {
 }
 
 .modal-background {
-  margin-top: 4%;
   position: fixed;
   right: 0;
   top: 0;
@@ -104,26 +114,43 @@ p.subrayado {
   backdrop-filter: blur(500px);
   z-index: 1;
 }
+
 .modal-background::before {
-  content: "x";
-  color: #fff;
+  /* content: "x"; */
+  /* color: #fff;
   display: inline-block;
   padding-right: auto;
   font-size: 30px;
   visibility: visible;
   width: 100%;
   display: flex;
-  justify-content: flex-end;
-  padding: 2% 20%;
+  justify-content: center;
+  padding: 3% 0% 0% 30%; */
+  /* padding-top: 3%; */
 }
+div.cerrarModal {
+  position: absolute;
+  display: flex;
+  justify-self: flex-start;
+  padding: 1% 0% 0% 42%;
+  color: white;
+  font-size: 25px;
+  z-index: 1;
+  cursor: pointer;
+  filter: drop-shadow(2px 2px 2px black);
+}
+
 .modal-card {
   margin: 0 auto;
   display: block;
   width: 45%;
-  background-color: white;
   border-radius: 5px;
+  opacity: 1;
+  padding-top: 10%;
 }
-
+.carousel-container {
+  opacity: 1;
+}
 .descripcion p.texto {
   text-align: justify;
   font-weight: 500;
@@ -141,7 +168,11 @@ p.subrayado {
     padding-left: var(--margin-tablet);
     padding-right: var(--margin-tablet);
   }
+  .contenedorImagenes {
+    display: none;
+  }
 }
+
 /*----------------------MODELO ADAPTATIVO DESKTOP-------------------------*/
 
 @media screen and (min-width: 992px) {
@@ -149,9 +180,11 @@ p.subrayado {
   .distancia p {
     width: 90%;
   }
+
   .contenedorImagenes {
     display: flex;
   }
+
   g .calificacionEstrellas {
     width: 140px;
   }
@@ -159,9 +192,11 @@ p.subrayado {
   .metros {
     display: none;
   }
+
   .linea1Tabletb {
     width: 100%;
   }
+
   .linea1Tablet {
     width: 100%;
   }
@@ -170,13 +205,16 @@ p.subrayado {
   .linea2 p {
     font-size: 1.1rem;
   }
+
   .linea2 {
     margin-bottom: 10px;
     padding-top: 10px;
   }
+
   .compartir {
     padding-left: 10px;
   }
+
   .descripcion p {
     padding-right: 0px;
   }
@@ -187,5 +225,8 @@ p.subrayado {
     margin-right: calc(var(--margin-desktop) * -1);
     padding-left: var(--margin-desktop);
     padding-right: var(--margin-desktop);
+  }
+  .modal-card {
+    opacity: 1;
   }
 }

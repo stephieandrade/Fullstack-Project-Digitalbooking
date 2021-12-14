@@ -1,15 +1,9 @@
 .compartir {
   display: flex;
   gap: 18px;
-
 }
-
 
 /*----------------------MODELO ADAPTATIVO DESKTOP-------------------------*/
 
 @media screen and (min-width: 992px) {
-  .compartir{
-    padding-top: 19px;
-    padding-bottom: 19px;
-  }
 }

@@ -1,17 +1,19 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import OpcionesBusqueda from "../OpcionesBusqueda/OpcionesBusqueda";
 import BusquedaCalendario from "../BusquedaCalendario/BusquedaCalendario";
 import "./busqueda.scoped.css";
+import Icono from "../Icono/Icono";
 
-const Busqueda = ({ setData }) => {
+const Busqueda = ({ callAPI, ciudades }) => {
   const [idCiudad, setIdCiudad] = useState();
   const [fecha1, setFecha1] = useState();
   const [fecha2, setFecha2] = useState();
 
-  const [isDisabled, setIsDisabled] = useState(true);
+  //
+  const [resetSub, setResetsub] = useState(false);
+  //
 
   function handleChange(e) {
-    setIsDisabled(false);
     let fecha1 = e[0].format("YYYY-MM-DD");
     switch (e.length) {
       case 1:
@@ -34,50 +36,49 @@ const Busqueda = ({ setData }) => {
     }
   }
 
-  const requestOptions = {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      fechaInicial: fecha1,
-      fechaFinal: fecha2,
-    }),
-  };
-
-  const obtenerDatosPOST = async (url) => {
-    const endpoint = await fetch(url, requestOptions);
-    const productos = await endpoint.json();
-    setData(productos);
-  };
-
-  //me trae productos por ciudad
-  const obtenerDatosGET = (endPoint) => {
-    fetch(endPoint)
-      .then((data) => data.json())
-      .then((dataParseada) => setData(dataParseada));
-  };
-
   const handleClick = () => {
     if (fecha1 && fecha2 && idCiudad) {
-      obtenerDatosPOST(
-        process.env.REACT_APP_API_URL +
-          "/productos/buscarPorFechasYCiudad/" +
-          idCiudad
-      );
+      //
+      setResetsub(true);
+      //
+      callAPI({
+        resource: "/productos/buscarPorFechasYCiudad/" + idCiudad,
+        method: "POST",
+        options: {
+          fechaInicial: fecha1,
+          fechaFinal: fecha2,
+        },
+      });
       return;
     }
     if (fecha1 && fecha2) {
-      obtenerDatosPOST(
-        process.env.REACT_APP_API_URL + "/productos/buscarPorFechas"
-      );
+      callAPI({
+        resource: "/productos/buscarPorFechas",
+        method: "POST",
+        options: {
+          fechaInicial: fecha1,
+          fechaFinal: fecha2,
+        },
+      });
       return;
     }
     if (idCiudad) {
-      obtenerDatosGET(
-        process.env.REACT_APP_API_URL + "/productos/buscarPorCiudad/" + idCiudad
-      );
+      callAPI({
+        resource: "/productos/buscarPorCiudad/" + idCiudad,
+      });
       return;
     }
   };
+
+  //
+  const handleClickR = () => {
+    if (setResetsub) {
+      callAPI({
+        resource: "/productos/",
+      });
+    }
+  };
+  //
 
   return (
     <section className="buscar-ofertar">
@@ -85,22 +86,18 @@ const Busqueda = ({ setData }) => {
         Busca ofertas de vehículos económicos, deportivos o de lujo
       </h1>
       <div className="buscador">
-        <OpcionesBusqueda
-          setIdCiudad={(e) => {
-            setIsDisabled(false);
-            setIdCiudad(e);
-          }}
-        />
+        <OpcionesBusqueda ciudades={ciudades} setIdCiudad={setIdCiudad} />
         <div className="fechas">
           <BusquedaCalendario onChange={handleChange} />
         </div>
-        <button
-          onClick={(e) => handleClick()}
-          id="btn-buscador"
-          disabled={isDisabled}
-        >
-          Buscar
-        </button>
+        <div className="contBotones">
+          <button onClick={handleClick} id="btn-buscador">
+            Buscar
+          </button>
+          <button onClick={handleClickR} className="botonRest">
+            <Icono className={`fas fa-sync-alt`} />
+          </button>
+        </div>
       </div>
     </section>
   );

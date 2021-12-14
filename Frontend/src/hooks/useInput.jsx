@@ -1,23 +1,27 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import useValidate from "./useValidate";
 
-const useInput = (validate) => {
+const useInput = (validate, validar) => {
   const [value, setValue] = useState("");
-
-  const [error] = useValidate(value, validate);
   const [showError, setShowError] = useState(false);
+
+  // Nos indica el estado de error del componente
+  const [error] = useValidate(value, validate, validar);
 
   const handleChange = (e) => {
     const { value } = e.target;
     setValue(value);
+
+    // ocultar el error al escribir en el input
     setShowError(false);
   };
 
-  const handleBlur = (e) => {
-    setShowError(error);
-  };
+  // Cada que cambia el disparador es porq se quiere validar, mostrar error si lo hay
+  useEffect(() => {
+    if (validar > 0) if (error) setShowError(true);
+  }, [validar]);
 
-  return { handleChange, handleBlur, value, showError };
+  return { handleChange, value, showError, error };
 };
 
 export default useInput;

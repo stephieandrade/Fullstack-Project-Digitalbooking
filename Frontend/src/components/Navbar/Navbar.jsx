@@ -29,6 +29,19 @@ function Navbar() {
       <>
         <Avatar name={estado.session.nombreCompleto} className="visible" />
 
+        {estado?.session?.roles &&
+          estado.session.roles[0].authority === "ROLE_ADMIN" && (
+            <li
+              className={`nav-text2 ${
+                location.pathname === "/administracion" ? "hidden" : ""
+              }`}
+            >
+              <Link to="/administracion">
+                <span className="nav">Administracion</span>
+              </Link>
+            </li>
+          )}
+
         <p style={{ flex: 1 }} />
         <div className="cerrar-sesion" onClick={handleClick}>
           <span className="text">¿Deseas </span>

@@ -1,14 +1,19 @@
 package com.example.ProyectoIntegrador.service;
 
 import com.example.ProyectoIntegrador.DTO.CaracteristicaDTO;
+import com.example.ProyectoIntegrador.DTO.ProductoDTO;
 import com.example.ProyectoIntegrador.model.Caracteristica;
+import com.example.ProyectoIntegrador.model.Puntuacion;
 import com.example.ProyectoIntegrador.repository.CaracteristicaRepository;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 @Service
 public class CaracteristicaService implements IGenericaService<CaracteristicaDTO, Long>{
@@ -58,11 +63,28 @@ public class CaracteristicaService implements IGenericaService<CaracteristicaDTO
         }
     }
 
-
     @Override
-    public Boolean eliminar(Long id) {
-        caracteristicaRepository.deleteById(id);
+    public void eliminar(Long id) {
         logger.info("Eliminando caracteristica");
-        return (this.buscar(id)== null);
+        caracteristicaRepository.deleteById(id);
         }
+
+/**Segun lo solicitado en sprint 4, agrego metodo para agregar una nueva caracteristica a traves de agregar un producto(no con su propio endpoint),
+y tambien si ya esta guardada en BD solo relacionarla con el nuevo producto para no duplicarse los registros **/
+
+    public List<Caracteristica> agregarNueva(Set<Caracteristica> caracteristicaList) {
+        List<Caracteristica> responseList = new ArrayList<>();
+
+        for (Caracteristica c : caracteristicaList){
+            if(this.caracteristicaRepository.findByNombre(c.getNombre()) == null){
+                responseList.add(this.caracteristicaRepository.save(c));
+
+            }else {
+                responseList.add(this.caracteristicaRepository.findByNombre(c.getNombre()));
+            }
+        }
+        logger.info("LISTA DE CARACTERISTICAS RESTANTE : " + responseList);
+        return responseList;
+    }
 }
+/** ----------------------------------------------------------------------------------------- **/

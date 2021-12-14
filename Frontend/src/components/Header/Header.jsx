@@ -5,10 +5,11 @@ import Avatar from "../Avatar/Avatar";
 import Navbar from "../Navbar/Navbar";
 import { Contexto } from "../Contexto/Contexto";
 import "./header.scoped.css";
+import AdminLink from "../AdminLink/AdminLink";
 
 function Header() {
-   const [content, setContent] = useState("");
-   const { estado } = useContext(Contexto);
+  const [content, setContent] = useState("");
+  const { estado } = useContext(Contexto);
 
   useEffect(() => {
     if (estado.session && JSON.stringify(estado.session) !== "{}") {
@@ -28,8 +29,6 @@ function Header() {
     }
   }, [estado]);
 
-
-
   return (
     <>
       <header>
@@ -42,4 +41,3 @@ function Header() {
   );
 }
 export default Header;
-

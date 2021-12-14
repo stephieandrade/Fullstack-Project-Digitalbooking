@@ -3,7 +3,9 @@ package com.example.ProyectoIntegrador.service;
 import com.example.ProyectoIntegrador.DTO.CategoriaDTO;
 import com.example.ProyectoIntegrador.exceptions.BadRequestException;
 import com.example.ProyectoIntegrador.model.Categoria;
+import com.example.ProyectoIntegrador.model.Producto;
 import com.example.ProyectoIntegrador.repository.CategoriaRepository;
+import com.example.ProyectoIntegrador.repository.ProductoRepository;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,17 +25,19 @@ public class CategoriaService implements IGenericaService<CategoriaDTO, Long>{
     private CategoriaRepository categoriaRepository;
 
     @Autowired
+    private ProductoRepository productoRepository;
+
+    @Autowired
     private ObjectMapper mapper;
 
     @Override
     public CategoriaDTO buscar(Long id) throws BadRequestException {
-        Categoria categoriaEncontrada = categoriaRepository.findCategoryById(id);
-        CategoriaDTO categoriaEncontradaDto = mapper.convertValue(categoriaEncontrada, CategoriaDTO.class);
-        if(categoriaEncontradaDto == null || categoriaEncontrada.getCategorias_id() == null){
+        Optional<Categoria> categoriaEncontrada = categoriaRepository.findById(id);
+        if(categoriaEncontrada.isEmpty() || categoriaEncontrada.get().getCategorias_id() == null){
             throw new BadRequestException("No existe categoria con ese id");
         }
         else {
-            return categoriaEncontradaDto;
+            return mapper.convertValue(categoriaEncontrada.get(), CategoriaDTO.class);
         }
     }
 
@@ -42,6 +46,9 @@ public class CategoriaService implements IGenericaService<CategoriaDTO, Long>{
         if(categoriaDTO == null || categoriaDTO.getTitulo() == null){
             logger.error("Los datos ingresados son nulos");
             throw new BadRequestException("Los datos ingresados son nulos");
+        }
+        if(categoriaDTO.getCategorias_id() != null){
+            throw new BadRequestException("No es posible guardar una categoria con un id previamente asignado");
         }
         else{
             Categoria categoriaNueva = mapper.convertValue(categoriaDTO, Categoria.class);
@@ -58,6 +65,9 @@ public class CategoriaService implements IGenericaService<CategoriaDTO, Long>{
         for (Categoria categoria : categoriaList) {
             CategoriaDTO categoriaDTO = mapper.convertValue(categoria, CategoriaDTO.class);
             categoriaDTOList.add(categoriaDTO);
+            List<Producto> productosXCategoria = productoRepository.findProductsByCategory(categoria.getCategorias_id());
+            Integer cantidadProductosXCategoria = productosXCategoria.size();
+            categoriaDTO.setCantidadProductos(cantidadProductosXCategoria);
         }
         logger.info("Devolviendo el listado de categorias existentes");
         return categoriaDTOList;
@@ -97,17 +107,9 @@ public class CategoriaService implements IGenericaService<CategoriaDTO, Long>{
 
 
     @Override
-    public Boolean eliminar(Long id) throws BadRequestException {
-        Optional<Categoria> categoria = categoriaRepository.findById(id);
-        if(categoria.isEmpty()){
-            throw new BadRequestException("No existe categoria con ese id");
-        }
-        else{
-            categoriaRepository.deleteById(categoria.get().getCategorias_id());
-            logger.info("Eliminando una categoria");
-            CategoriaDTO categoriaEliminada = mapper.convertValue(categoria, CategoriaDTO.class);
-            return (categoriaEliminada == null); //si la categoria encontrada fue eliminada es igual a null y devuelve TRUE
-        }
+    public void eliminar(Long id) throws BadRequestException {
+        logger.info("Eliminando una categoria");
+        categoriaRepository.deleteById(id);
     }
 
 }

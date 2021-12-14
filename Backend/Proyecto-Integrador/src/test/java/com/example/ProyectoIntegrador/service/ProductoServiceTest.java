@@ -9,10 +9,11 @@ import com.example.ProyectoIntegrador.model.Ciudad;
 import com.example.ProyectoIntegrador.model.Imagen;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.FixMethodOrder;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.MethodSorters;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
@@ -26,90 +27,55 @@ import static org.junit.jupiter.api.Assertions.*;
 @SpringBootTest
 class ProductoServiceTest {
 
-    private static Categoria categoria;
-    private static CategoriaService categoriaService;
-    private static Ciudad ciudad;
-    private static CiudadService ciudadService;
-    private static ProductoDTO productoDTO;
-    private static ProductoService productoService;
-    private static final ObjectMapper mapper = new ObjectMapper();
+    @Autowired @Qualifier("productoService")
+    private ProductoService productoService;
+    @Autowired(required=true)
+    private CategoriaService categoriaService;
+    @Autowired(required=true)
+    private CiudadService ciudadService;
+    @Autowired(required=true)
+    private ImagenService imagenService;
 
-    ImagenService imagenService;
+    @Autowired(required=true)
+    ProductoDTO productoDTO;
+    @Autowired(required=true)
+    ProductoDTO productoDTO2;
+    @Autowired(required=true)
+    Imagen imagen1;
+    @Autowired(required=true)
+    ObjectMapper mapper = new ObjectMapper();
 
-    ProductoDTO productoDTO2 = new ProductoDTO();
-    Imagen imagen1 = new Imagen();
 
-    @BeforeAll
-    public static void crear() throws BadRequestException {
+    @Test
+    public void crear_producto() throws BadRequestException {
+        //creo y agrego producto
+        productoDTO.setNombre("auto lujoso 3");
+        productoDTO.setDescripcion("descripcion auto lujoso");
+        productoDTO.setNormas("una norma");
+        productoDTO.setPoliticaCancelacion("una policita");
+        productoDTO.setSaludYSeguridad("salud y seguridad");
+        productoDTO.setDireccion("av alberdi");
+
+        CategoriaDTO categoria1 = categoriaService.buscar(1L);
+        CiudadDTO ciudad1 = ciudadService.buscar(1L);
+        productoDTO.setCategoria(mapper.convertValue(categoria1, Categoria.class));
+        productoDTO.setCiudad(mapper.convertValue(ciudad1, Ciudad.class));
+
+        productoDTO.setListadeimagenes(new ArrayList<>());
+        productoDTO.setPuntuaciones(new ArrayList<>());
+
+
         try {
-            //creo y agrego categoria
-            Categoria categoria = new Categoria();
-            CategoriaService categoriaService = new CategoriaService();
-            categoria.setTitulo("Lujoso");
-            categoria.setDescripcion("Un hotel");
-            categoria.setUrl_imagen("urlimagen");
-            CategoriaDTO categoriaDTO = mapper.convertValue(categoria, CategoriaDTO.class);
+            assertNotNull(productoService.agregar(productoDTO));
 
-            CategoriaDTO categoriaAgregada = categoriaService.agregar(categoriaDTO);
-
-            //creo y agrego ciudad
-            Ciudad ciudad = new Ciudad();
-            CiudadService ciudadService = new CiudadService();
-            ciudad.setNombre("Mendoza");
-            ciudad.setNombre_pais("arg");
-            CiudadDTO ciudadDTO = mapper.convertValue(ciudad, CiudadDTO.class);
-
-            CiudadDTO ciudadAgregada = ciudadService.agregar(ciudadDTO);
-
-            //creo y agrego producto
-            ProductoDTO productoDTO = new ProductoDTO();
-            ProductoService productoService = new ProductoService();
-            productoDTO.setNombre("auto lujoso");
-            productoDTO.setDescripcion("descripcion auto lujoso");
-            Categoria categoria1 = mapper.convertValue(categoriaAgregada, Categoria.class);
-            Ciudad ciudad1 = mapper.convertValue(ciudadAgregada, Ciudad.class);
-            productoDTO.setCategoria(categoria1);
-            productoDTO.setCiudad(ciudad1);
-            productoDTO.setListadeimagenes(new ArrayList<>());
-            productoDTO.setPuntuaciones(new ArrayList<>());
-
-            productoService.agregar(productoDTO);
-
-        } catch (Exception e){
+        } catch (BadRequestException e) {
             e.printStackTrace();
         }
     }
 
-    @Test
-    public void test1() {
-        //test de que se agregó el producto
-        try {
-            assertNotNull(productoDTO);
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
 
     @Test
-    public void test2() throws BadRequestException {
-        //editar y buscar productos por id
-        try {
-            productoDTO.setNombre("no es un auto lujoso");
-            productoDTO.setDescripcion("no es descripcion auto lujoso");
-
-            productoService.editarSinId(productoDTO);
-            ProductoDTO productoEditado = productoService.buscar(productoDTO.getProductos_id());
-
-            assertEquals(productoDTO.getNombre(), "no es un auto lujoso");
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-    @Test
-    public void test3() {
+    public void listar() {
         //listar todos los productos
         try {
             List<ProductoDTO> productoDTOList = productoService.listarTodas();
@@ -121,10 +87,50 @@ class ProductoServiceTest {
     }
 
     @Test
-    public void test4() throws BadRequestException {
+    public void buscar_por_id(){
+        try {
+            ProductoDTO productoDTO = productoService.buscar(1L);
+            assertNotNull(productoDTO);
+        } catch (BadRequestException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void editar_producto(){
+        //editar y buscar productos por id
+        try {
+            productoDTO.setProductos_id(1L);
+            productoDTO.setNombre("auto deportivo 2");
+            productoDTO.setDescripcion("descripcion auto deportivo 2");
+            productoDTO.setPoliticaCancelacion("una policita");
+            productoDTO.setSaludYSeguridad("salud y seguridad");
+            productoDTO.setDireccion("av alberdi");
+
+            CategoriaDTO categoria1 = categoriaService.buscar(1L);
+            CiudadDTO ciudad1 = ciudadService.buscar(1L);
+            productoDTO.setCategoria(mapper.convertValue(categoria1, Categoria.class));
+            productoDTO.setCiudad(mapper.convertValue(ciudad1, Ciudad.class));
+
+            productoDTO.setListadeimagenes(new ArrayList<>());
+            productoDTO.setPuntuaciones(new ArrayList<>());
+
+            productoService.editarSinId(productoDTO);
+            ProductoDTO productoEditado = productoService.buscar(productoDTO.getProductos_id());
+
+            assertEquals(productoDTO.getNombre(), productoEditado.getNombre());
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    @Test
+    public void lisyar_por_ciudad(){
         //listar productos por ciudad
         try {
-            List<ProductoDTO> productos = productoService.buscarProductoPorCiudad(ciudad.getCiudades_id());
+            List<ProductoDTO> productos = productoService.buscarProductoPorCiudad(1L);
             assertTrue(productos.size() > 0);
 
         } catch (BadRequestException e) {
@@ -133,10 +139,10 @@ class ProductoServiceTest {
     }
 
     @Test
-    public void test5() throws BadRequestException {
+    public void listar_por_categoria(){
         //listar productos por categoria
         try {
-            List<ProductoDTO> productos = productoService.buscarProductoPorCategoria(categoria.getCategorias_id());
+            List<ProductoDTO> productos = productoService.buscarProductoPorCategoria(1L);
             assertTrue(productos.size() > 0);
 
         } catch (BadRequestException e) {
@@ -146,7 +152,7 @@ class ProductoServiceTest {
 
 
     @Test
-    public void test6(){
+    public void listar_imagenes_x_producto(){
         //listarImagenesSegunProducto
 
         productoDTO2.setNombre("auto");
@@ -166,22 +172,6 @@ class ProductoServiceTest {
         */
     }
 
-    @Test
-    public void test7() throws BadRequestException {
-        //eliminar producto
-        try {
-            assertTrue(productoService.eliminar(productoDTO.getProductos_id()));
-        } catch (BadRequestException e) {
-            e.printStackTrace();
-        }
-    }
 
 
 }
-
-
-
-
-
-    
-

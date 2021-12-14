@@ -16,6 +16,18 @@
   color: #fff;
 }
 
+.reserva .rmdp-day.rmdp-range {
+  background-color: #1dbeb4;
+  box-shadow: 0 0 3px #1dbeb4;
+  color: #fff;
+  border-radius: 50%;
+}
+
+.reserva .rmdp-day.rmdp-disabled span {
+  color: #bebebe;
+  text-decoration: line-through;
+}
+
 .reserva .rmdp-day-picker {
   display: flex;
   justify-content: space-around;
@@ -43,9 +55,9 @@
   padding-top: 10px;
 }
 .reserva .rmdp-day.rmdp-today span {
-  background-color: #1dbeb4;
   color: #fff;
   width: 28px;
+  background-color: #7fdbff;
 }
 .reserva .rmdp-day.rmdp-selected span:not(.highlight) {
   background-color: #1dbeb4;
@@ -69,8 +81,7 @@
     padding-top: 10px;
   }
   .reserva .rmdp-day.rmdp-today span {
-    background-color: #1dbeb4;
-    color: #fff;
+    color: var(--two-color);
     width: 28px;
   }
   .reserva .rmdp-day.rmdp-selected span:not(.highlight) {
@@ -86,5 +97,8 @@
   .reserva.rmdp-wrapper {
     width: auto;
     justify-content: center;
+  }
+  .rmdp-wrapper.rmdp-shadow.reserva {
+    width: 100%;
   }
 }

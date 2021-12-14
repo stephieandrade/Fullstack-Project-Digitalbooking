@@ -1,19 +1,21 @@
-import React from "react";
-import "./reserva-exitosa.scoped.css";
-import Imagen from "./img/Vector.png";
-import { Link } from "react-router-dom";
-import Boton from "../Boton/Boton";
+import React, { useContext, useEffect } from "react";
+import { Contexto } from "../Contexto/Contexto";
+import PopupExitoso from "../PopupExitoso/PopupExitoso";
+import { useLocalStorage } from "../../hooks/useLocalStorage";
+
 export default function ReservaExitosa() {
-  return (
-    <div className="contenedorPrincipalExitoso">
-      <div className="contenedorExitoso">
-        <img src={Imagen} alt="Exitosa" />
-        <h2>¡Muchas gracias!</h2>
-        <p>Su reserva se ha realizado con éxito</p>
-        <Link to="/">
-          <button>ok</button>
-        </Link>
-      </div>
-    </div>
-  );
+  const [session] = useLocalStorage("session", {});
+  const { estado, setEstado } = useContext(Contexto);
+  const { data } = estado;
+
+  useEffect(() => {
+    setEstado((estado) => ({ ...estado, session }));
+  }, [session]);
+
+  const mensajes = {
+    titulo: "¡Muchas gracias!",
+    subtitulo: "Su reserva se ha realizado con éxito",
+    boton: "ok",
+  };
+  return <PopupExitoso {...mensajes} />;
 }

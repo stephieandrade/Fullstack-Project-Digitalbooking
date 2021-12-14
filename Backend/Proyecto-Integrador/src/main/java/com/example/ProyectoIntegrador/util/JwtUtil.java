@@ -35,8 +35,15 @@ public class JwtUtil {
     //Token generator
     public String generateToken(UserDetails userDetails, UsuarioDTO usuarioDTO) {
         Map<String, Object> claims = new HashMap<>();
+
+
+        // Agrego al payload nombre y apellido para visualizar en <Avatar/>
         claims.put("nombre", usuarioDTO.getNombre());
         claims.put("apellido", usuarioDTO.getApellido());
+
+        // Agrego al payload el listado de roles del usuario
+        claims.put("roles", userDetails.getAuthorities());
+
         return createToken (claims, userDetails.getUsername());
     }
 

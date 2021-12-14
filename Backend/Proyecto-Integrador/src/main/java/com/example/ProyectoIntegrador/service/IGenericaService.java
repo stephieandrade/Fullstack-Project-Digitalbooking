@@ -10,6 +10,6 @@ public interface IGenericaService<T, K> {
     T agregar(T t) throws BadRequestException;
     List<T> listarTodas();
     T editar(T t, K k) throws BadRequestException;
-    Boolean eliminar(K k) throws BadRequestException;
+    void eliminar(K k) throws BadRequestException;
 
 }

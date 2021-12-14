@@ -12,9 +12,6 @@
   flex-direction: column;
 }
 
-.categoria:hover {
-  filter: grayscale(80%);
-}
 
 .categoria div.img {
   height: 183px;

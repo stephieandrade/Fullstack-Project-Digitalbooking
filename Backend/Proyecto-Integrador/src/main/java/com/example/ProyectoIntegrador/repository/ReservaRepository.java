@@ -12,4 +12,7 @@ public interface ReservaRepository extends JpaRepository<Reserva, Long> {
     //Spring data para consultar reservas por id de producto.
     List<Reserva> findByProductosId(Long id);
 
+    //Spring data para consultar reservas por id de usuario.
+    List<Reserva> findByUsuariosId(Long id);
+
 }

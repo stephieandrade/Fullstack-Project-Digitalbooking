@@ -28,11 +28,11 @@ class CategoriaServiceTest {
 
     @Test
 
-    public void test1() throws BadRequestException {
+    public void crear_y_listar() throws BadRequestException {
         //crear y listar categorias
 
         try {
-            categoriaDTO.setTitulo("deportivo");
+            categoriaDTO.setTitulo("deportivo 2");
             categoriaDTO.setDescripcion("descapotable negro");
             categoriaDTO.setUrl_imagen("una url");
 
@@ -47,37 +47,30 @@ class CategoriaServiceTest {
     }
 
     @Test
-
-    public void test2() throws BadRequestException {
-        //editar y buscar categoria por id
-
+    public void buscar_por_id() throws BadRequestException {
         try {
-            otraCategoriaDTO.setTitulo("ya no es deportivo");
-            otraCategoriaDTO.setDescripcion("ya no es descapotable negro");
-            otraCategoriaDTO.setUrl_imagen("ahora es otra una url");
-
-            categoriaService.editar(otraCategoriaDTO, 1L);
             CategoriaDTO categoriaEncontradaDTO = categoriaService.buscar(1L);
-
-            assertEquals(otraCategoriaDTO.getTitulo(), categoriaEncontradaDTO.getTitulo());
-
+            assertNotNull(categoriaEncontradaDTO);
         } catch (BadRequestException e) {
             e.printStackTrace();
         }
     }
 
     @Test
-
-    public void test3() throws BadRequestException{
-        //eliminar categoria
+    public void editar() throws BadRequestException {
+        //editar y buscar categoria por id
 
         try {
-            categoriaService.eliminar(1L);
+            otraCategoriaDTO.setCategorias_id(1L);
+            otraCategoriaDTO.setTitulo("ya no es deportivo");
+            otraCategoriaDTO.setDescripcion("ya no es como antes");
+            otraCategoriaDTO.setUrl_imagen("ahora es otra una url");
 
-            CategoriaDTO categoriaEncontradaDTO = categoriaService.buscar(1L);
-            assertEquals(categoriaEncontradaDTO, null);
+            CategoriaDTO categoriaEditada = categoriaService.editarSinId(otraCategoriaDTO);
 
-        }catch(Exception e) {
+            assertEquals(otraCategoriaDTO.getTitulo(), categoriaEditada.getTitulo());
+
+        } catch (BadRequestException e) {
             e.printStackTrace();
         }
     }

@@ -33,15 +33,18 @@ public class CiudadService implements IGenericaService<CiudadDTO, Long>{
         if (ciudadEncontrada == null) {
             throw new BadRequestException("No existe ciudad con ese id");
         } else {
-            CiudadDTO ciudadEncontradaDto = mapper.convertValue(ciudadEncontrada, CiudadDTO.class);
-            return ciudadEncontradaDto;
+            return mapper.convertValue(ciudadEncontrada, CiudadDTO.class);
         }
     }
+
     @Override
     public CiudadDTO agregar(CiudadDTO ciudadDTO) throws BadRequestException {
         if(ciudadDTO == null || ciudadDTO.getNombre() == null){
             logger.error("Los datos ingresados son nulos");
             throw new BadRequestException("Los datos ingresados son nulos");
+        }
+        if(ciudadDTO.getCiudades_id() != null){
+            throw new BadRequestException("No es posible guardar una ciudad con un id previamente asignado");
         }
         else{
             Ciudad ciudadNueva = mapper.convertValue(ciudadDTO, Ciudad.class);
@@ -94,16 +97,8 @@ public class CiudadService implements IGenericaService<CiudadDTO, Long>{
     }
 
     @Override
-    public Boolean eliminar(Long id) throws BadRequestException {
-        Optional<Ciudad> ciudad = ciudadRepository.findById(id);
-        if(ciudad.isEmpty()) {
-            throw new BadRequestException("No existe ciudad con ese id");
-        }
-        else{
-            ciudadRepository.deleteById(id);
-            logger.info("Eliminando una ciudad del sistema");
-            CiudadDTO ciudadEliminada = mapper.convertValue(ciudad, CiudadDTO.class);
-            return (ciudadEliminada == null); //si la ciudad encontrada fue eliminada es igual a null y devuelve TRUE
-        }
+    public void eliminar(Long id) throws BadRequestException {
+        logger.info("Eliminando una ciudad del sistema");
+        ciudadRepository.deleteById(id);
     }
 }

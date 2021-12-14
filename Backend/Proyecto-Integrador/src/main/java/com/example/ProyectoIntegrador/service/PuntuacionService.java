@@ -16,9 +16,7 @@ public class PuntuacionService implements IGenericaService<Puntuacion, Long> {
     @Autowired
     private PuntuacionRepository puntuacionRepository;
 
-    /**
-     * esto tampoco lo usamos aun
-     **/
+    /** esto tampoco lo usamos aun **/
     @Override
     public Puntuacion buscar(Long id) {
         Puntuacion puntuacion = puntuacionRepository.findById(id).orElse(null);
@@ -27,7 +25,6 @@ public class PuntuacionService implements IGenericaService<Puntuacion, Long> {
 
     /**en este metodo hay que modificar la linea de usuario, cuando tengamos usuario completo(no lo piden aun)
      * por eso esta en null provisoriamente, este si lo usamos**/
-
     @Override
     public Puntuacion agregar(Puntuacion puntuacion) {
         logger.info("en agregar puntuacion " + puntuacion);
@@ -36,19 +33,14 @@ public class PuntuacionService implements IGenericaService<Puntuacion, Long> {
         return p;
     }
 
-
-    /**
-     * modificar este metodo si lo piden a futuro, para listar puntuaciones segun producto, tampoco lo usamos en este sprint
-     **/
+    /**} modificar este metodo si lo piden a futuro, para listar puntuaciones segun producto, tampoco lo usamos en este sprint **/
     @Override
     public List<Puntuacion> listarTodas() {
         List<Puntuacion> p = puntuacionRepository.findAll();
         return p;
     }
 
-    /**
-     * esto tampoco lo usamos aun,ya modifique la linea de usuario
-     **/
+    /** esto tampoco lo usamos aun,ya modifique la linea de usuario **/
     @Override
     public Puntuacion editar(Puntuacion puntuacion, Long id) {
         if (puntuacion != null) {
@@ -61,12 +53,10 @@ public class PuntuacionService implements IGenericaService<Puntuacion, Long> {
         }
     }
 
-    /**
-     * esto tampoco lo usamos aun
-     **/
+    /** esto tampoco lo usamos aun **/
     @Override
-    public Boolean eliminar(Long id) {
+    public void eliminar(Long id) {
+        logger.info("eliminando una puntuacion");
         puntuacionRepository.deleteById(id);
-        return (this.buscar(id) == null);
     }
 }

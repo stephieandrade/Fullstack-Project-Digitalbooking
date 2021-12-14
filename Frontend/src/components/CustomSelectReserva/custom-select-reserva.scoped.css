@@ -1,0 +1,124 @@
+div,
+li {
+  font-family: "Roboto", sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  width: 100%;
+}
+
+li {
+  list-style: none;
+  font-size: 12x;
+}
+
+div.wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.select_wrap {
+  position: relative;
+  user-select: none;
+}
+
+span.error {
+  align-self: center;
+  color: red;
+  padding-top: 5px;
+}
+
+span.error.hidden {
+  visibility: hidden;
+}
+
+.select_wrap .default_option {
+  background: var(--five-color);
+  border-radius: 5px;
+  position: relative;
+  cursor: pointer;
+  color: var(--three-color);
+  height: 38px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  /* filter: drop-shadow(0px 1px 1px var(--two-color)); */
+  box-shadow: 0px 2px 4px rgb(0 0 0 / 25%);
+}
+
+.select_wrap .default_option.light {
+  color: #bebebe;
+}
+.select_wrap .default_option li {
+  padding: 10px 20px 10px 15px;
+}
+
+.select_wrap .select_ul {
+  position: absolute;
+  top: 40px;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  border-radius: 5px;
+  display: none;
+  z-index: 2;
+  /* filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)); */
+  box-shadow: 0px 1px 5px rgb(0 0 0 / 25%);
+}
+
+.select_wrap .select_ul li {
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.select_wrap .select_ul li:first-child:hover {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.select_wrap .select_ul li:last-child:hover {
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.select_wrap .select_ul li:hover {
+  background: #fff4dd;
+}
+
+.select_wrap .option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: space-between;
+}
+
+.select_wrap .option .icon {
+  background: url("https://i.imgur.com/oEZu0sK.png") no-repeat 0 0;
+  width: 32px;
+  height: 32px;
+  margin-right: 15px;
+}
+.select_wrap.active {
+  background-color: initial;
+}
+.select_wrap.active .select_ul {
+  display: block;
+}
+
+div.list {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding-bottom: 10px;
+  border-bottom: solid 1px var(--one-color);
+}
+
+div.options label {
+  color: black;
+  user-select: none;
+  cursor: pointer;
+}
+
+div.options p {
+  color: var(--three-color);
+  user-select: none;
+}

@@ -1,3 +1,4 @@
+
 /***** BLOQUE POLITICAS *****/
 
 div.contenedor-politicas {
@@ -38,16 +39,16 @@ p.subrayado {
   font-weight: bold;
   font-size: 1.25rem;
   line-height: 1.438rem;
-  padding-top: 1.938rem;
-  padding-bottom: 1.938rem;
+  padding-top: 1.138rem;
+  padding-bottom: 1.138rem;
   background-color: #e5e5e5;
   margin: 0px;
 }
 .tituloReserva.Cal{
-  padding-left: 1%;
+  padding-left: 2%;
 }
 .tituloReserva.Hora{
-  padding-left: 1%;
+  padding-left: 2%;
 }
 .bgPolitica {
   background-color: #fff;
@@ -107,6 +108,9 @@ div.reservaCalendario{
     padding-left: var(--margin-tablet);
     padding-right: var(--margin-tablet);
   } */
+  .tittle{
+    padding-left: 2%;
+  }
 }
 /* css para el calendario en reserva */
 
@@ -118,7 +122,7 @@ div.reservaCalendario{
   align-items: center;
   width: 97%;
 } */
-
+ 
 
 @media screen and (min-width: 992px) {
   /* El título de los bloques muestra la línea azul de borde a borde (hasta max-width) en Desktop en página de reservas */
@@ -130,12 +134,28 @@ div.reservaCalendario{
   }
   .reservas {
     flex-direction: row;
-
-    width: 100%;
-    padding-left: 2.688rem;
-    padding-right: 2.688rem;
+    max-width: 1368px;
+    padding-left: 1%;
+    padding-right: 1%;
+    margin-right: auto;
+    margin-left: auto;
+   
   }
+  .tittle{
+    max-width: 1368px;
+ margin-right: auto;
+ margin-left: auto;
+ text-align: justify;
+ padding-left: 2%;
 
+  }
+ 
+.contenedorReserva{
+  background-color: #e5e5e5;
+  width: 100%;
+
+ 
+}
   .contenedorForm {
     display: flex;
     flex-direction: column;
@@ -153,5 +173,9 @@ div.reservaCalendario{
   }
   div.reservaCalendario{
     display: flex;
+    margin-right: 0%;
+    margin-left: 0%;
+    width: 100%;
   }
+ 
 }

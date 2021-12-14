@@ -67,7 +67,7 @@ div.contenedor-logos {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  padding: 8px 18px 0px 18px;
+  padding: 8px 10px 0px 10px;
   list-style: none;
   height: 60px;
   text-align: end;
@@ -153,6 +153,11 @@ div.cerrar-sesion span.titulo {
 
 .hidden {
   display: none;
+}
+
+span.nav {
+  color: var(--two-color);
+  font-weight: 700;
 }
 
 @media screen and (min-width: 768px) {

@@ -1,8 +1,7 @@
 .contenedor-politica {
   display: flex;
   flex-direction: column;
-  gap: 15px;
-  margin-bottom: 50px;
+  margin-bottom: 15%;
   font-weight: 500;
 }
 
@@ -11,22 +10,40 @@
   font-weight: bold;
 }
 .contenedor-politica p {
-  margin-top: 0px;
   text-align: justify;
   color: var(--two-color);
   line-height: 18px;
   font-size: 1rem;
 }
 
+.contenedor-data p{
+  padding-right: 10%;
+}
+h2{
+  padding: 10% 0% 8% 0%;
+}
+
 /*----------------------MODELO ADAPTATIVO TABLET-------------------------*/
 @media screen and (min-width: 768px) {
-  .contenedor-politica {
+  
+  p.pNormas{
+    padding-right: 15%;
   }
-
+  p.pSyS{
+    padding-right: 15%;
+  }
+  p.pCancelacion{
+    padding-right: 5%;
+  }
   .contenedor-politica div {
     text-align: justify;
-    width: 20%;
-    padding-top: 30px;
+    width: 100%;
+    padding-top: 2%;
+  }
+  .contenedor-politica{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 5%;
   }
 }
 /*----------------------MODELO ADAPTATIVO MOBILE-------------------------*/
@@ -36,10 +53,41 @@
     flex-direction: column;
   }
   .contenedor-politica div {
-    width: 80%;
+    width: 100%;
+  
   }
-  .descripcionPolitica {
-    padding-left: 11px;
-    padding-right: 11px;
+
+  .contenedor-politica{
+    display: flex;
+    flex-direction: row;
+  }
+  div.pol1{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    width: 100%;
+  }
+  div.pol2{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    width: 60%;
+  }
+  h2{
+    padding: 0;
+  }
+  .contenedor-data p{
+    padding-top: 6%;
+  }
+  p.pCancelacion
+  {
+    padding-top: 3%;
+    padding-right: 2%;
+  }
+  p.pNormas{
+    padding-right: 30%;
+  }
+  p.pSyS{
+    padding-right: 30%;
   }
 }

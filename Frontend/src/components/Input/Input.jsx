@@ -14,6 +14,8 @@ export default function Input(props) {
     onError,
     update,
     children,
+    validar,
+    onValidate,
     ...data
   } = props;
   // Propiedas que quedan en data se pasan al DOM
@@ -21,21 +23,18 @@ export default function Input(props) {
 
   const [show, setShow] = useState(false);
 
-  const { handleChange, handleBlur, value, showError } = useInput(
-    validate,
-    errorMessage
-  );
+  const { handleChange, value, showError, error } = useInput(validate, validar);
 
   useEffect(() => {
-    onError();
+    if (showError) onError();
   }, [showError]);
 
   const handleShow = () => {
     setShow(!show);
   };
   useEffect(() => {
-    if (update) update(value);
-  }, [value]);
+    if (update) update({ value, error });
+  }, [value, error]);
 
   return (
     <>
@@ -48,9 +47,8 @@ export default function Input(props) {
             value={value}
             onChange={(e) => {
               handleChange(e);
-              onChange();
+              onChange(e);
             }}
-            onBlur={handleBlur}
           />
           {children &&
             cloneElement(children, {

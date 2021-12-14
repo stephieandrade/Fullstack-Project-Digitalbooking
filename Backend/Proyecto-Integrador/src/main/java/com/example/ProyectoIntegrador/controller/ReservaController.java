@@ -8,6 +8,7 @@ import com.example.ProyectoIntegrador.service.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
@@ -23,11 +24,13 @@ public class ReservaController {
     @Autowired
     private UsuarioService usuarioService;
 
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     @GetMapping
     public ResponseEntity listarTodos(){
         return ResponseEntity.ok(reservaService.listarTodas());
     }
 
+    @PreAuthorize("hasRole('ROLE_USER')")
     @PostMapping()
     public ResponseEntity agregar(Authentication authentication, @RequestBody ReservaDTO reservaDTO)throws BadRequestException {
 
@@ -38,15 +41,21 @@ public class ReservaController {
         UsuarioDTO usuarioDTO = usuarioService.buscarPorEmail(email);
 
         // Seteo el ID de ese usuario  dentro de reservaDTO
-        reservaDTO.setUsuarios_id(usuarioDTO.getUsuarios_id());
+        reservaDTO.setUsuariosId(usuarioDTO.getUsuarios_id());
 
         // Guardo la reserva
         return ResponseEntity.ok(reservaService.agregar(reservaDTO));
     }
 
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     @GetMapping("/buscarPorIdProducto/{id}")
     public ResponseEntity<List<ReservaDTO>> buscarReservaPorIdProducto(@PathVariable Long id) throws BadRequestException {
         return ResponseEntity.ok(reservaService.buscarReservaPorIdProducto(id));
+    }
+
+    @GetMapping("/buscarPorIdUsuario/{id}")
+    public ResponseEntity<List<ReservaDTO>> buscarReservaPorIdUsuario(@PathVariable Long id) throws BadRequestException {
+        return ResponseEntity.ok(reservaService.buscarReservaPorIdUsuario(id));
     }
 
     @ExceptionHandler({BadRequestException.class})

@@ -36,5 +36,5 @@ public class Reserva {
     private Long productosId;
 
     @Column(name = "usuarios_id")
-    private Long usuarios_id;
+    private Long usuariosId;
 }

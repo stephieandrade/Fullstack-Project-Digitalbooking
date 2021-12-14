@@ -36,18 +36,11 @@ public class UsuarioController{
     @Autowired
     private AuthenticationManager authenticationManager;
 
-
-
     @PostMapping()
     public ResponseEntity<?> agregar(@RequestBody UsuarioDTO usuarioDTO)throws BadRequestException{
         UsuarioDTO usuarioCreadoDTO = usuarioService.agregar(usuarioDTO);
         String jwt = getJwt(usuarioCreadoDTO.getEmail());
         return new ResponseEntity(new AuthenticationResponseDTO(jwt),HttpStatus.CREATED);
-    }
-
-    @ExceptionHandler({BadRequestException.class})
-    public ResponseEntity<String> procesarErrorBadRequest(BadRequestException ex) {
-        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(ex.getMessage());
     }
 
     @PostMapping("/login")
@@ -76,5 +69,10 @@ public class UsuarioController{
         String nombreCompleto = userDTO.getNombre().concat(" "+userDTO.getApellido());
         String jwt = jwtTokenUtil.generateToken(userDetails,userDTO );
         return jwt;
+    }
+
+    @ExceptionHandler({BadRequestException.class})
+    public ResponseEntity<String> procesarErrorBadRequest(BadRequestException ex) {
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(ex.getMessage());
     }
 }

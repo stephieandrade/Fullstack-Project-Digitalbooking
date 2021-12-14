@@ -9,7 +9,7 @@ public class ProyectoIntegradorApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(ProyectoIntegradorApplication.class, args);
-		PropertyConfigurator.configure("src/main/resources/log4j.properties");
+		//PropertyConfigurator.configure("src/main/resources/log4j.properties");
 
 
 	}}

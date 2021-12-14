@@ -38,8 +38,15 @@ public class CaracteristicaController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity eliminar(@PathVariable Long id){
-        return ResponseEntity.ok(caracteristicaService.eliminar(id));
+    public ResponseEntity<String> eliminar(@PathVariable Long id) throws BadRequestException {
+        ResponseEntity<String> response = null;
+        if (caracteristicaService.buscar(id) != null) {
+            caracteristicaService.eliminar(id);
+            response = ResponseEntity.status(HttpStatus.NO_CONTENT).body("Eliminado");
+        } else {
+            throw new BadRequestException("No existe caracteristica con ese id");
+        }
+        return response;
     }
 
     @ExceptionHandler({BadRequestException.class})

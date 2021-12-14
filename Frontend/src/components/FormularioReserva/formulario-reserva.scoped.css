@@ -1,126 +1,128 @@
 div.contenedorFormulario {
-    background: #FFFFFF;
-    border: 1px solid #DFE4EA;
-    box-sizing: border-box;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 8px;
-    padding: 18px;
-    margin-left: 13px;
-    margin-right: 13px;
+  background: #fff;
+  border: 1px solid #dfe4ea;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 8px;
+  padding: 18px;
+  margin-left: 17px;
+  margin-right: 13px;
+  width: 96%;
 }
 
+input[type="text"] {
+  font-family: "Roboto";
+  font-size: 16px;
+  font-weight: 500;
+}
 
 .formulario1 input,
 .formulario2 input {
-    width: 100%;
-    background: #DFE4EA;
-    height: 40px;
-    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.15);
-    border-radius: 5px;
-    outline: none;
+  width: 100%;
+  background: #dfe4ea;
+  height: 40px;
+  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.15);
+  border-radius: 5px;
+  outline: none;
 }
 
 .nombreInput::placeholder {
-    font-weight: 500;
-    font-size: 12px;
-    line-height: 14px;
-    opacity: 0.75;
-   
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  opacity: 0.75;
 }
 .apellidoInput::placeholder {
-    font-weight: 500;
-    font-size: 12px;
-    line-height: 14px;
-    opacity: 0.75;
-    
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  opacity: 0.75;
 }
 .emailInput::placeholder {
-    font-weight: 500;
-    font-size: 12px;
-    line-height: 14px;
-    opacity: 0.75;
-   
-} 
-
-.ciudadInput::placeholder{
-    font-weight: 500;
-    font-size: 12px;
-    line-height: 14px;
-    opacity: 0.75;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  opacity: 0.75;
 }
 
+.ciudadInput::placeholder {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  opacity: 0.75;
+}
 
+input.ciudadInput {
+  background-color: white;
+}
 
 .hidden {
-    visibility: hidden;
-  }
-
-.hiddenP{
-    color: red;
+  visibility: hidden;
 }
 
-.tituloinput{
-   padding-bottom: 2%;    
+.hiddenP {
+  color: red;
 }
 
-input.ciudadInput{
-    padding-left: 12px;
-}
-input.nombreInput{
-    padding-left: 12px;
-}
-input.apellidoInput{
-    padding-left: 12px;
-}
-input.emailInput{
-    padding-left: 12px;
+.tituloinput {
+  padding-bottom: 2%;
 }
 
+input.ciudadInput {
+  padding-left: 12px;
+}
+input.nombreInput {
+  padding-left: 12px;
+}
+input.apellidoInput {
+  padding-left: 12px;
+}
+input.emailInput {
+  padding-left: 12px;
+}
 
 @media (min-width: 768px) {
-    .contenedorFormulario {
-        display: flex;
-        flex-direction: column;
-        width: 96%;
-    }
+  .contenedorFormulario {
+    display: flex;
+    flex-direction: column;
+    width: 96%;
+  }
 
-    .formulario1,
-    .formulario2 {
-        flex-direction: row;
-        gap: 22px;
-        justify-content: space-between;
+  .formulario1,
+  .formulario2 {
+    flex-direction: row;
+    gap: 22px;
+    justify-content: space-between;
+  }
 
-    }
+  .formulario1 label {
+    width: 100%;
+  }
 
-    .formulario1 label {
-        width: 100%;
-    }
-
-    .formulario2 label {
-        width: 100%;
-        padding-top: 20px;
-
-    }
+  .formulario2 label {
+    width: 100%;
+    padding-top: 20px;
+  }
 }
 
 @media (min-width: 992px) {
-    .contenedorFormulario {
-        display: flex;
-        justify-content: space-around;
-        width: 96%;
-        height: 217px;
-    }
-    div.formulario1{
-        display: flex;
-        flex-direction: row;
-    }
-    div.formulario2{
-        display: flex;
-        flex-direction: row;
-        padding-top: 3%;
-    }
-    .tituloinput {
+  .contenedorFormulario {
+    display: flex;
+    justify-content: space-around;
+    width: 96%;
+    height: 217px;
+  }
+  div.formulario1 {
+    display: flex;
+    flex-direction: row;
+  }
+  div.formulario2 {
+    display: flex;
+    flex-direction: row;
+    padding-top: 3%;
+  }
+  .tituloinput {
     width: 100%;
     padding-bottom: 0;
-    }
+  }
 }

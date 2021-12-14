@@ -1,13 +1,12 @@
 import React from "react";
 import "./iconos-compartir.scoped.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHeart, faShareAlt } from "@fortawesome/free-solid-svg-icons";
+import Icono from "../Icono/Icono";
 
 function IconosCompartir() {
   return (
     <div className="compartir">
-      <FontAwesomeIcon icon={faShareAlt} />
-      <FontAwesomeIcon icon={faHeart} />
+      <Icono className={` fas fa-share-alt`} />
+      <Icono className={` fas fa-heart`} />
     </div>
   );
 }

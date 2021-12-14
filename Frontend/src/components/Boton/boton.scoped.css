@@ -61,3 +61,15 @@ span.error {
 span.error.hidden {
   visibility: hidden;
 }
+
+.hidden {
+  display: none;
+}
+
+@media screen and (min-width: 992px) {
+  .button2.crear-producto {
+    display: flex;
+    flex-direction: column;
+    width: 365px;
+  }
+}

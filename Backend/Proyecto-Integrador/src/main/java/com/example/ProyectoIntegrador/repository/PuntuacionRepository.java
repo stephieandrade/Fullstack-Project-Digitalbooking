@@ -10,5 +10,5 @@ import java.util.List;
 public interface PuntuacionRepository extends JpaRepository<Puntuacion, Long> {
 
 //Spring data
-    List<Puntuacion> findByProductosId(Long productos_id);
+    List<Puntuacion> findByProductosId(Long id);
 }

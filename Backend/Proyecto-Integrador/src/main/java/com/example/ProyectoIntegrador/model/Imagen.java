@@ -1,19 +1,19 @@
 package com.example.ProyectoIntegrador.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import lombok.Getter;
-import lombok.Setter;
-import org.hibernate.annotations.OnDelete;
-import org.hibernate.annotations.OnDeleteAction;
+import lombok.*;
 
 import javax.persistence.*;
 
+
+@NoArgsConstructor // agrega constructor vacio(que usa hibernate)
+@AllArgsConstructor //genera un constructor con todos los atributos (automatico de lombok)
 @Entity
 @Table(name = "imagenes")
 public class Imagen{
 
-    @Getter
+
     @Id
+    @Getter
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "imagenes_id")
     private Long imagenes_id;
@@ -27,27 +27,7 @@ public class Imagen{
     private String urlImagen;
 
     @Getter @Setter
-    @ManyToOne(optional = false)
-    @JoinColumn(name = "productos_id")
-    @JsonIgnore
-    private Producto producto;
+    @Column(name = "productos_id")
+    private Long productos_id;
 
-
-    public Imagen() {
-    }
-
-    public Imagen(String titulo, String urlImagen) {
-        this.titulo = titulo;
-        this.urlImagen = urlImagen;
-    }
-
-    @Override
-    public String toString() {
-        return "Imagen{" +
-                "id=" + imagenes_id +
-
-                ", titulo='" + titulo + '\'' +
-                ", urlImagen='" + urlImagen + '\'' +
-                '}';
-    }
 }

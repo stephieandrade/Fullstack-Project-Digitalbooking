@@ -1,0 +1,10 @@
+div.clonador {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  div.agregar {
+    flex: 1 1 auto;
+  }
+  

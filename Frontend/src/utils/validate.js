@@ -7,4 +7,8 @@ const validatePassword = (input) => {
   return input.length >= 6;
 };
 
-export { validateEmail, validatePassword };
+const validateName = (input) => {
+  return input.length >= 1;
+};
+
+export { validateEmail, validatePassword, validateName };

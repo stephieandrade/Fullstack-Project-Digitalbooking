@@ -66,7 +66,7 @@ div.ant-picker.ant-picker-range path {
 }
 
 .buscador button {
-  width: 100%;
+  width: 90%;
   height: 38px;
   border-radius: 5px;
   background-color: var(--one-color);
@@ -90,7 +90,23 @@ div.ant-picker.ant-picker-range path {
   border: var(--two-color) 1px solid;
   color: #fff;
 }
-
+button.botonRest {
+  width: 7%;
+  height: 38px;
+  border-radius: 5px;
+  background-color: var(--one-color);
+  color: white;
+  outline: none;
+  border-color: transparent;
+  cursor: pointer;
+}
+button:hover.botonRest {
+  background-color: lightgray;
+}
+.contBotones{
+  display: flex;
+  justify-content: space-between;
+}
 /**-------MODIFICAR CALENDARIO----------------**/
 
 div.ant-picker-cell-inner {
@@ -116,14 +132,25 @@ div.ant-picker-cell-inner {
     flex: 2;
   }
 
-  .buscador #btn-buscador {
+  /* .buscador #btn-buscador {
     flex: 1;
+  } */
+  .buscador .contBotones {
+    flex: 1
   }
-
+  .contBotones .botonRest{
+    flex:1
+  }
+  .contBotones #btn-buscador {
+    flex: 2;
+  }
   h1 {
     font-size: 1.87rem;
     padding-left: 5rem;
     padding-right: 5rem;
+  }
+  .contBotones{
+    gap: 5%
   }
 }
 

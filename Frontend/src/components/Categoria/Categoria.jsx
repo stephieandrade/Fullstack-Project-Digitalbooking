@@ -11,7 +11,7 @@ export default function Categoria({ data, click }) {
         />
         <div className="detalle">
           <span className="titulo">{data.titulo}</span>
-          <span className="cantidad">2506 disponibles</span>
+          <span className="cantidad">{data.cantidadProductos} disponibles</span>
         </div>
       </div>
     </>

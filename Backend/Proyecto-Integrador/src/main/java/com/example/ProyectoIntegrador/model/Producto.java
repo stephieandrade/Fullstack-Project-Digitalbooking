@@ -1,22 +1,20 @@
 package com.example.ProyectoIntegrador.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
+
+@NoArgsConstructor // agrega constructor vacio(que usa hibernate)
+@AllArgsConstructor //genera un constructor con todos los atributos (automatico de lombok)
 @Entity
 @Table(name = "productos")
 public class Producto {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Getter
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long productos_id;
 
     @Getter @Setter
@@ -24,47 +22,55 @@ public class Producto {
     private String nombre;
 
     @Getter @Setter
+    @Column(length = 255)
+    private String normas;
+
+    @Getter @Setter
+    @Column(length = 255)
+    private String saludYSeguridad;
+
+    @Getter @Setter
+    @Column(length = 255)
+    private String politicaCancelacion;
+
+    @Getter @Setter
     @Column(nullable = false)
     private String descripcion;
 
-    @Getter
-    @ManyToOne
-    @JoinColumn(name = "categorias_id", nullable = false) //tendra una FK con referencia al id de la entidad Ciudad; y una columna llamada ciudades_id
-    private Categoria categoria; //nombre del atributo de mapeo
-
-    @Getter
-    @ManyToOne
-    @JoinColumn(name = "ciudades_id", nullable = false) //significa q tendra una FK con referencia al id de la entidad Ciudad; y una columna llamada ciudad_id
-    private Ciudad ciudad; //nombre del atributo de mapeo
+    @Getter @Setter
+    @Column(nullable = false)
+    private String direccion;
 
     @Getter @Setter
     @ManyToMany
     @JoinTable(name ="productos_has_caracteristicas", joinColumns = @JoinColumn(name = "productos_id"),
-            inverseJoinColumns = @JoinColumn(name ="caracteristicas_id"))    //bidireccional
-    @JsonIgnore            //sino entra en un bucle infinito
+            inverseJoinColumns = @JoinColumn(name ="caracteristicas_id"))              //unidireccional
     private List <Caracteristica> caracteristicas;
 
-    @Setter @Getter
+
+    @Getter @Setter
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "productos_id")
     private List<Puntuacion> puntuaciones;     //unidireccional
 
-    @Setter @Getter
-    @OneToMany(mappedBy="producto", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private List<Imagen> listadeimagenes;
-
-    @Setter @Getter
+    @Getter @Setter
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "productos_id")
-    private List<Reserva> listadereservas;
+    private List<Imagen> listadeimagenes;       //unidireccional
 
-    public Producto(){
+    @Getter @Setter
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "productos_id")
+    private List<Reserva> listadereservas;       //unidireccional
 
-    }
+    @Getter @Setter
+    @ManyToOne
+    @JoinColumn(name = "ciudades_id", nullable = false)
+    private Ciudad ciudad;
 
-    public Producto(String nombre, String descripcion) {
-        this.nombre = nombre;
-        this.descripcion = descripcion;
-    }
+    @Getter @Setter
+    @ManyToOne
+    @JoinColumn(name = "categorias_id")
+    private Categoria categoria;
 
 }

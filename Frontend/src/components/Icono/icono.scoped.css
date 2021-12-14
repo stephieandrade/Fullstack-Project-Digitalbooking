@@ -45,3 +45,27 @@
 .login-error {
   margin: 10px;
 }
+
+/* Icono mostrado en el Home antes de desplegar el Select*/
+.home.buscador {
+  font-size: 24px;
+  color: var(--three-color);
+  opacity: 0.5;
+}
+
+.home.buscador.seleccionado {
+  opacity: 1;
+}
+
+/* Icono mostrado en el Home al desplegar el Select*/
+.home.options {
+  font-size: 24px;
+  color: var(--three-color);
+}
+
+/* Icono desplegable en los CustomSelect*/
+
+.custom-select.producto {
+  color: var(--one-color);
+  font-size: 12px;
+}

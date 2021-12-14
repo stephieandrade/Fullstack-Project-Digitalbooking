@@ -17,13 +17,14 @@ import Icono from "../Icono/Icono";
 
 export default function Login() {
   const [session, setSession] = useLocalStorage("session", {});
-  const [, setJwt] = useLocalStorage("jwt");
+  const [jwt, setJwt] = useLocalStorage("jwt", null);
   const { estado, setEstado } = useContext(Contexto);
 
   const history = useHistory();
 
   const query = useQuery();
 
+  const [validar, setValidar] = useState(0);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showError, setShowError] = useState(false);
@@ -35,30 +36,49 @@ export default function Login() {
 
   const { post, response } = useFetch(process.env.REACT_APP_API_URL);
 
-  async function doLogin() {
-    const data = await post("/usuarios/login", { email, password });
+  async function doLogin({ emailValue, passwordValue }) {
+    const data = await post("/usuarios/login", {
+      email: emailValue,
+      password: passwordValue,
+    });
     if (response.ok) {
       const jwt = parseJwt(data.jwt);
       const { nombre, apellido } = jwt;
 
       setSession({ ...jwt, nombreCompleto: nombre + " " + apellido });
       setJwt(data.jwt);
-      const id = query.get("error");
-      if (id) {
-        history.push(`/producto/${query.get("error")}/reserva`);
-      } else {
-        history.push(`/`);
-      }
     } else {
       setShowError(
         "Lamentablemente no ha podido iniciar sesión. Por favor, intente más tarde"
       );
     }
   }
+  useEffect(() => {
+    if (email.error === false && password.error === false)
+      doLogin({
+        emailValue: email.value,
+        passwordValue: password.value,
+      });
+  }, [validar]);
+
+  useEffect(() => {
+    if (jwt) navigate();
+  }, [jwt]);
+
+  function navigate() {
+    // Si provenía de un error, redirigir a la página de reserva
+    const id = query.get("error");
+    if (id) {
+      history.push(`/producto/${query.get("error")}/reserva`);
+    } else {
+      history.push(`/`);
+    }
+  }
 
   function handleSubmit(event) {
     event.preventDefault();
-    if (!formError) doLogin();
+    //if (!formError) doLogin();
+    setValidar((validar) => validar + 1);
   }
 
   const onChange = () => {
@@ -100,6 +120,7 @@ export default function Login() {
               name="email"
               id="email"
               required
+              validar={validar}
               update={setEmail}
               validate={validateEmail}
               errorMessage={"Ingrese un email válido"}
@@ -117,6 +138,7 @@ export default function Login() {
               type="password"
               required
               update={setPassword}
+              validar={validar}
               validate={validatePassword}
               errorMessage={
                 "La contraseña tiene una longitud de menos de 6 caracteres"

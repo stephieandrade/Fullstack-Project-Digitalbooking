@@ -2,7 +2,9 @@ package com.example.ProyectoIntegrador.service;
 
 import com.example.ProyectoIntegrador.DTO.UsuarioDTO;
 import com.example.ProyectoIntegrador.exceptions.BadRequestException;
+import com.example.ProyectoIntegrador.model.Rol;
 import com.example.ProyectoIntegrador.model.Usuario;
+import com.example.ProyectoIntegrador.repository.RolRepository;
 import com.example.ProyectoIntegrador.repository.UsuarioRepository;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.log4j.Logger;
@@ -19,6 +21,9 @@ public class UsuarioService implements IGenericaService<UsuarioDTO, Long>{
 
     @Autowired
     private UsuarioRepository usuarioRepository;
+
+    @Autowired
+    private RolRepository rolRepository;
 
     @Autowired
     private ObjectMapper mapper;
@@ -44,6 +49,9 @@ public class UsuarioService implements IGenericaService<UsuarioDTO, Long>{
             usuarioNuevo.setListadereservas(null);
         }
             usuarioNuevo.setPassword(encoder.encode(usuarioDTO.getPassword()));
+            // Hardcodeamos al usuario reistrado el rol de USER
+            Rol rol = rolRepository.findByNombre("USER");
+            usuarioNuevo.setRol(rol);
             usuarioRepository.save(usuarioNuevo);
             logger.info("Se agregó un nuevo usuario al sistema");
             return mapper.convertValue(usuarioNuevo, UsuarioDTO .class);
@@ -74,7 +82,6 @@ public class UsuarioService implements IGenericaService<UsuarioDTO, Long>{
     }
 
     @Override
-    public Boolean eliminar(Long aLong) throws BadRequestException {
-        return null;
+    public void eliminar(Long aLong) throws BadRequestException {
     }
 }

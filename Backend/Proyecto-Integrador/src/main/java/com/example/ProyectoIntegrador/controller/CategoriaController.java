@@ -37,8 +37,15 @@ public class CategoriaController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity eliminar(@PathVariable Long id) throws BadRequestException {
-        return ResponseEntity.ok(categoriaService.eliminar(id));
+    public ResponseEntity<String> eliminar(@PathVariable Long id) throws BadRequestException {
+        ResponseEntity<String> response = null;
+        if (categoriaService.buscar(id) != null) {
+            categoriaService.eliminar(id);
+            response = ResponseEntity.status(HttpStatus.NO_CONTENT).body("Eliminado");
+        } else {
+            throw new BadRequestException("No existe ciudad con ese id");
+        }
+        return response;
     }
 
     @ExceptionHandler({BadRequestException.class})

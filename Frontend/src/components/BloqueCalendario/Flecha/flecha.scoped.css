@@ -77,39 +77,57 @@ div.flecha span {
     cursor: pointer;
     top: 120px;
   }
-  
+
   div.flecha span {
     color: var(--two-color);
     font-weight: bold;
     font-size: 30px;
   }
-  
+
   div.flecha.left {
     left: -10px;
   }
-  
+
   div.flecha.right {
     right: -20px;
   }
-
 }
 
-
 @media screen and (min-width: 992px) {
+  /* Posición vertical de las flechas en reserva */
+  div.rmdp-wrapper.reserva div.flecha {
+    top: 150px;
+  }
+
+  div.rmdp-wrapper.detalles div.flecha {
+    top: 150px;
+  }
+  div.rmdp-wrapper.detalles div.flecha.left {
+    left: -30px;
+  }
+
+  div.rmdp-wrapper.detalles div.flecha.right {
+    left: 780px;
+  }
+
   div.flecha {
     background-color: #1dbeb4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: normal;
   }
   div.flecha.left {
     left: -130px;
     top: 110px;
   }
-  
+
   div.flecha.right {
     right: -150px;
     top: 110px;
   }
   div.flecha span {
-    color:white;
+    color: white;
   }
   .reserva div.flecha.left {
     left: -10%;

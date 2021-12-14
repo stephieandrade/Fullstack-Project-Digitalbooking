@@ -15,12 +15,8 @@
   padding: 10px 0px;
   background-size: cover;
   background-repeat: no-repeat;
-  border-radius: 0px 0px 8px 8px;
-  background-position:  center;
-}
-
-.img:hover {
-  filter: grayscale(80%);
+  border-radius: 8px;
+  background-position: center;
 }
 
 .info {
@@ -50,6 +46,14 @@
 
 .parrafoUbicacion span {
   color: var(--one-color);
+}
+
+a {
+  color: var(--one-color);
+}
+
+span.break {
+  flex: auto;
 }
 
 /*----------MODELO ADAPTATIVO TABLET ----------------*/

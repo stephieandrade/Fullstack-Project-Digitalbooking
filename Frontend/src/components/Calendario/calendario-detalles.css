@@ -1,43 +1,52 @@
+.detalles.rmdp-wrapper {
+  display: flex;
+  width: 100%;
+  padding: 4% 0 4% 0;
+  justify-content: center;
+}
+.detalles .rmdp-calendar {
+  width: 100%;
+  /* padding-left: 10%; */
+  /* padding-right: 10%; */
+}
+.detalles .rmdp-day-picker {
+  gap: 2%;
+  width: 100%;
+}
+.detalles .rmdp-day {
+  margin: 7px;
+  width: 34px;
+  height: 34px;
+}
+.detalles .rmdp-day.rmdp-selected span:not(.highlight) {
+  color: black;
+  background-color: var(--one-color);
+}
+.detalles .rmdp-day span,
+.detalles .rmdp-header-values span,
+.detalles .rmdp-week-day {
+  font-size: 20px;
+}
+.detalles .rmdp-week-day {
+  color: var(--one-color);
+}
+.detalles .sd {
+  /* margin: 0 -30% 0 0; */
+}
 
+.detalles .rmdp-day.rmdp-disabled span {
+  color: #bebebe;
+  text-decoration: line-through;
+}
+.detalles .rmdp-day {
+  cursor: default;
+}
 
-  .detalles.rmdp-wrapper {
-    display: flex;
-    width: 100%;
-    padding: 4% 0 4% 0;
-    justify-content: center;
-  }
-  .detalles .rmdp-calendar {
-    width: 100%;
-    /* padding-left: 10%; */
-    /* padding-right: 10%; */
-
-  }
-  .detalles .rmdp-day-picker {
-    gap: 2%;
-    width: 100%;
-  }
-  .detalles .rmdp-day {
-    margin: 7px;
-    width: 34px;
-    height: 34px;
-    
-  }
-  .detalles .rmdp-day.rmdp-selected span:not(.highlight){
-      color: black;
-      background-color: var(--one-color);
-  }
-  .detalles .rmdp-day span,
-  .detalles .rmdp-header-values span,
-  .detalles .rmdp-week-day {
-    font-size: 20px;
-  }
-  .detalles .rmdp-week-day {
-    color: var(--one-color);
-    
-  }
-  .detalles .sd {
-    /* margin: 0 -30% 0 0; */
-  }
+.detalles .rmdp-day:not(.rmdp-disabled):not(.rmdp-day-hidden) span:hover {
+  background-color: initial;
+  color: initial;
+  cursor: default;
+}
 
 @media screen and (min-width: 768px) {
   .detalles.rmdp-wrapper {
@@ -46,12 +55,12 @@
     padding-right: 0;
     padding-left: 0;
   }
-  
+
   /* Espacio entre cada uno de los meses*/
   .detalles .rmdp-day-picker {
     gap: 4%;
   }
-  
+
   /* margin entre los días */
   .detalles .rmdp-day {
     margin: 5px;
@@ -59,14 +68,13 @@
   .detalles .rmdp-week {
     justify-content: space-around;
   }
-  
+
   /* Fuente del texto de días */
   .detalles .rmdp-day span,
   .detalles .rmdp-header-values span,
   .detalles .rmdp-week-day {
     font-size: 20px;
-    font-weight: 700;
-    
+    font-weight: 100;
   }
   .detalles .rmdp-week-day {
     padding: 3% 0 3% 0;
@@ -74,11 +82,11 @@
   .detalles .rmdp-day {
     /* color: #545776; */
   }
-  
+
   .detalles .rmdp-calendar {
     height: 330px;
   }
-  
+
   /* .detalles .rmdp-container .custom-calendar.ep-arrow[direction="bottom"] {
     border-top: 1px solid bisque;
   }
@@ -86,9 +94,7 @@
   /* .rmdp-container .custom-calendar.ep-arrow[direction="top"] {
     border-bottom: 1px solid bisque;
   } */
-  .detalles .rmdp-day.rmdp-disabled{
-    color: #bebebe;
-  }
+
   /* .detalles .rmdp-header{
       padding-bottom: 6%;
   } */
@@ -97,17 +103,22 @@
 @media screen and (min-width: 992px) {
   .detalles.rmdp-wrapper {
     width: fit-content;
-    padding: 5% 25% 0 20%;
- }
- .detalles .rmdp-day-picker {
-  gap: 6%;
-}
-.detalles .rmdp-day {
-  margin: 1% 2%;
-  
-}
-.detalles .rmdp-day.rmdp-selected span:not(.highlight){
-  width: 30px;
+    /* padding: 5% 25% 0 20%; */
+    padding: 35px 55px;
+  }
 
-}
+  .detalles .rmdp-calendar {
+    width: 800px;
+  }
+  .detalles .rmdp-day-picker {
+    gap: 6%;
+    justify-content: center;
+  }
+  .detalles .rmdp-day {
+    /* margin: 1% 2%; */
+    margin: 5px 7px;
+  }
+  .detalles .rmdp-day.rmdp-selected span:not(.highlight) {
+    width: 30px;
+  }
 }

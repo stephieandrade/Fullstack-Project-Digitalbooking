@@ -22,11 +22,11 @@ export default function Auto() {
       .then(function(dataApi) {
         setData(dataApi);
         console.log(dataApi);
-        setEstado({
+        setEstado((estado) => ({
           ...estado,
           imagenes: dataApi.listadeimagenes,
           data: dataApi,
-        });
+        }));
       });
   }
 

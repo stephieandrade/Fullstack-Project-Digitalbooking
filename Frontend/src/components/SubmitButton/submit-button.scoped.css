@@ -1,21 +1,23 @@
 .contenedor-boton p {
   color: red;
+  padding-bottom: 10px;
+  font-size: 0.8rem;
 }
 
 .contenedor-boton button {
-  background: #1DBEB4;
+  background: #1dbeb4;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.12);
   border-radius: 5px;
   height: 50px;
   width: 100%;
-  color: #FFFFFF;
+  color: #ffffff;
   outline: none;
   border-color: transparent;
   margin-bottom: 1.125rem;
-  margin-top: 2.313rem;
+  margin-top: 3.313rem;
+  cursor: pointer;
 }
 
-.contenedor-boton button:hover{
+.contenedor-boton button:hover {
   background-color: var(--three-color);
-
 }

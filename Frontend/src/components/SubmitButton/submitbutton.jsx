@@ -37,7 +37,8 @@ const SubmitButton = () => {
 
     let completed = false;
     if (reserva) {
-      completed = Object.keys(reserva).length === 3;
+      // 4 con los inputs obligatorios
+      completed = Object.keys(reserva).length === 4;
     }
     if (!completed) {
       setUnsuccesMsg("Ingrese los datos correctamente e intente nuevamente");
@@ -66,12 +67,12 @@ const SubmitButton = () => {
 
   return (
     <div className="contenedor-boton">
-    <form onSubmit={handleSubmit}>
-      <button type="submit">Confirmar Reserva</button>
-      <div className={`errorMsg ${unsuccesMsg === "" ? "hidden" : ""}`}>
-        <p className="hiddenP">{unsuccesMsg}</p>
-      </div>
-    </form>
+      <form onSubmit={handleSubmit}>
+        <button type="submit">Confirmar Reserva</button>
+        <div className={`errorMsg ${unsuccesMsg === "" ? "hidden" : ""}`}>
+          <p className="hiddenP">{unsuccesMsg}</p>
+        </div>
+      </form>
     </div>
   );
 };

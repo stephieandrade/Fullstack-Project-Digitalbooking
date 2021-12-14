@@ -1,17 +1,18 @@
 import { useState, useEffect } from "react";
 
 // Cada que cambia la propiedad value, se encarga de ejecutar el método validate
+// Cada que cambia el disparador validar también valida
 // retorna un Boolean indicando si el campor es erroneo (true) o válido (false)
 
-const useValidate = (value, validate) => {
-  const [error, setError] = useState("");
+const useValidate = (value, validate, validar) => {
+  const [error, setError] = useState(false);
 
   useEffect(() => {
     if (validate) {
-      // Esto se llama con cada pulsación de tecla
-      setError(!validate(value));
+      const resultado = validate(value);
+      setError(!resultado);
     }
-  }, [value]);
+  }, [value, validar]);
 
   return [error];
 };

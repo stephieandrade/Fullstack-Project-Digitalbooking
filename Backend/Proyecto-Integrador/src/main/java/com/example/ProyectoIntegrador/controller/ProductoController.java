@@ -8,6 +8,7 @@ import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -22,9 +23,10 @@ public class ProductoController {
 
     final static Logger logger = Logger.getLogger(ProductoService.class);
 
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     @PostMapping()
     public ResponseEntity crearProducto(@RequestBody ProductoDTO productoDTO) throws BadRequestException{
-        return ResponseEntity.ok(productoService.agregar(productoDTO));
+        return new ResponseEntity<ProductoDTO>(productoService.agregar(productoDTO), HttpStatus.CREATED);
     }
 
     @GetMapping
@@ -37,19 +39,23 @@ public class ProductoController {
         return ResponseEntity.ok(productoService.buscar(id));
     }
 
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     @PutMapping()
     public ResponseEntity editarSinId(@RequestBody ProductoDTO productoDTO) throws BadRequestException {
         return ResponseEntity.ok(productoService.editarSinId(productoDTO));
     }
 
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     @DeleteMapping("/{id}")
-    public ResponseEntity eliminar(@PathVariable Long id) throws BadRequestException {
-        return ResponseEntity.ok(productoService.eliminar(id));
-    }
-
-    @ExceptionHandler({BadRequestException.class})
-    public ResponseEntity<String> procesarErrorBadRequest(BadRequestException ex) {
-        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(ex.getMessage());
+    public ResponseEntity<String> eliminar(@PathVariable Long id) throws BadRequestException {
+        ResponseEntity<String> response = null;
+        if (productoService.buscar(id) != null) {
+            productoService.eliminar(id);
+            response = ResponseEntity.status(HttpStatus.NO_CONTENT).body("Eliminado");
+        } else {
+            throw new BadRequestException("No existe ciudad con ese id");
+        }
+        return response;
     }
 
     @GetMapping("/{id}/imagenes")
@@ -75,6 +81,11 @@ public class ProductoController {
     @PostMapping("/buscarPorFechasYCiudad/{idCiudad}")
     public ResponseEntity<List<ProductoDTO>> buscarPorFechasYCiudad(@PathVariable Long idCiudad, @RequestBody FechasDTO fechasDTO) throws BadRequestException{
         return ResponseEntity.ok(productoService.filtrarPorCiudadYFechas(idCiudad, fechasDTO));
+    }
+
+    @ExceptionHandler({BadRequestException.class})
+    public ResponseEntity<String> procesarErrorBadRequest(BadRequestException ex) {
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(ex.getMessage());
     }
 
 }

@@ -20,20 +20,20 @@ public interface ProductoRepository extends JpaRepository<Producto, Long> {
             "WHERE c.categorias_id like :id", nativeQuery = true)
     List<Producto> findProductsByCategory(@Param("id") Long id);
 
-    @Query(value = "SELECT p.* FROM productos p \n" +
-            "   left join reservas r on r.productos_id = p.productos_id  \n" +
-            "   WHERE ((:fechaInicial < r.fecha_inicial AND :fechaFinal < r.fecha_inicial  \n" +
-            "   OR  :fechaInicial > r.fecha_final AND :fechaFinal > r.fecha_final)" +
-            "   OR (r.fecha_inicial is null and r.fecha_final is null))", nativeQuery = true)
+    @Query(value = "select P.*, R.* from productos P \n" +
+            "left join reservas R on P.productos_id = R.productos_id \n" +
+            "where P.productos_id not in (select distinct R.productos_id from reservas R\n" +
+            "where ( :fechaInicial < R.fecha_final  and  :fechaFinal > R.fecha_inicial))\n" +
+            "group by P.productos_id;", nativeQuery = true)
     List<Producto> filterProductsByDates(@Param("fechaInicial") LocalDate fechaInicial, @Param("fechaFinal") LocalDate fechaFinal);
 
-    @Query(value = "SELECT p.* FROM productos p \n" +
-            "    left join reservas r on r.productos_id = p.productos_id \n" +
-            "    inner join ciudades c on c.ciudades_id = p.ciudades_id \n" +
-            "    WHERE (p.ciudades_id = :id) \n" +
-            "    AND ((:fechaInicial < r.fecha_inicial AND :fechaFinal < r.fecha_inicial \n" +
-            "    OR  :fechaInicial > r.fecha_final AND :fechaFinal > r.fecha_final)" +
-            "    OR (r.fecha_inicial is null and r.fecha_final is null));", nativeQuery = true)
+    @Query(value = "select P.*, R.* from productos P \n" +
+            "left join reservas R on P.productos_id = R.productos_id \n" +
+            "where (P.ciudades_id = :id) \n" +
+            "and P.productos_id not in (select distinct R.productos_id from reservas R\n" +
+            "where ( :fechaInicial < R.fecha_final  and  :fechaFinal > R.fecha_inicial))\n" +
+            "group by P.productos_id;", nativeQuery = true)
     List<Producto> filterProductsByCityAndDates(@Param("id") Long id, @Param("fechaInicial") LocalDate fechaInicial, @Param("fechaFinal") LocalDate fechaFinal);
+
 
 }

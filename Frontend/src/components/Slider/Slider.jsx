@@ -3,7 +3,7 @@ import "./slider.css";
 import { Contexto } from "../Contexto/Contexto";
 import { useContext } from "react";
 
-function Slider({ thumbnails, radius, width, dots, maxWidth, margin }) {
+function Slider({ thumbnails, radius, width, dots, maxWidth, margin, showNavBtn }) {
   // Creo array con objetos de imagenes
   const { estado } = useContext(Contexto);
   console.log(estado);
@@ -16,8 +16,8 @@ function Slider({ thumbnails, radius, width, dots, maxWidth, margin }) {
     fontWeight: "bold",
   };
   const slideNumberStyle = {
-    fontSize: "15px",
-    color: "#545776",
+    color: "#ffffff",
+    fontSize: "1.7em",
   };
 
   return (
@@ -42,6 +42,7 @@ function Slider({ thumbnails, radius, width, dots, maxWidth, margin }) {
             slideImageFit="cover"
             thumbnails={thumbnails}
             thumbnailWidth="100px"
+            showNavBtn= {showNavBtn}
             style={{
               textAlign: "center",
               maxWidth: maxWidth,

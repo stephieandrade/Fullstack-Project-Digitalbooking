@@ -1,0 +1,20 @@
+a {
+  font-weight: 700;
+  color: var(--three-color);
+}
+.admin-container {
+  flex: 1 1 auto;
+  display: flex;
+  justify-content: flex-end;
+  display: none;
+  border-right: 2px solid var(--one-color);
+  height: 80%;
+  align-items: flex-end;
+  padding-right: 10px;
+}
+
+@media screen and (min-width: 768px) {
+  .admin-container {
+    display: flex;
+  }
+}

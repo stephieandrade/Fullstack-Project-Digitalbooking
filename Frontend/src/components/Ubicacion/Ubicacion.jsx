@@ -7,7 +7,6 @@ export default function Ubicacion() {
       <div className="detalles">
         <Icono className="fas fa-map-marker ubicacion" />
         <span className="distancia">A 940 m del centro</span>
-        <span className="mapa">MOSTRAR EN EL MAPA</span>
       </div>
       <div className="iconos">
         <Icono className="fas fa-wifi ubicacion" />

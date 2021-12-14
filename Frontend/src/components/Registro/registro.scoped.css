@@ -79,6 +79,7 @@ form h3 {
 
 div.crearcuenta-boton {
   justify-content: center;
+  display: flex;
 }
 
 .hidden {
@@ -86,7 +87,7 @@ div.crearcuenta-boton {
 }
 .errorMsg {
   color: red;
-  padding-top: 2px;
+  padding-top: 5px;
   text-align: right;
 }
 

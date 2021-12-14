@@ -8,9 +8,11 @@ export default function FormularioReserva({ nombre, apellido, email }) {
 
   //funcion para setear la ciudad en el contexto
   function handleCiudadChange(e) {
-    setEstado({ ...estado, ciudad: e.target.value });
+    setEstado({
+      ...estado,
+      reserva: { ...estado.reserva, ciudad: e.target.value },
+    });
   }
-  //condicional para renderizar mensaje de error si ciudad u otro valor (fecha, hora)  no se coloca
 
   return (
     <div className="contenedorFormulario">

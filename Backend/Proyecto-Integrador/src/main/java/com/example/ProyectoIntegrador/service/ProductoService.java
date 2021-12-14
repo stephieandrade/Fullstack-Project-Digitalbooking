@@ -16,12 +16,9 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.PathVariable;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 import java.util.stream.Collectors;
 
 @Service
@@ -33,6 +30,9 @@ public class ProductoService implements IGenericaService<ProductoDTO, Long>{
     private PuntuacionService puntuacionService;
 
     @Autowired
+    private CaracteristicaService caracteristicaService;
+
+    @Autowired
     private PuntuacionRepository puntuacionRepository;
 
     @Autowired
@@ -42,7 +42,7 @@ public class ProductoService implements IGenericaService<ProductoDTO, Long>{
     private ObjectMapper mapper;
 
     @Autowired
-    private CategoriaService categoriaService  ;
+    private CategoriaService categoriaService ;
 
     @Autowired
     private CategoriaRepository categoriaRepository;
@@ -51,7 +51,7 @@ public class ProductoService implements IGenericaService<ProductoDTO, Long>{
     private CiudadRepository ciudadRepository;
 
     @Autowired
-    private ImagenRepository imagenRepository;
+    private ImagenService imagenService;
 
     @Override
     public ProductoDTO buscar(Long id) throws BadRequestException {
@@ -85,8 +85,8 @@ public class ProductoService implements IGenericaService<ProductoDTO, Long>{
 
     public List<ProductoDTO> buscarProductoPorCategoria(Long id) throws BadRequestException {
         List<ProductoDTO> productoDTOList = new ArrayList<>();
-        Categoria categoria = categoriaRepository.findCategoryById(id);
-        if(categoria == null){
+        Optional<Categoria> categoria = categoriaRepository.findById(id);
+        if(categoria.isEmpty() || categoria.get().getCategorias_id() == null){
             logger.error("no existe categoria con ese id");
             throw new BadRequestException("no existe categoria con ese id");
         }
@@ -109,8 +109,32 @@ public class ProductoService implements IGenericaService<ProductoDTO, Long>{
             logger.error("Los datos ingresados son nulos");
             throw new BadRequestException("Los datos ingresados son nulos");
         }
+        if(productoDTO.getProductos_id() != null){
+            throw new BadRequestException("No es posible guardar un producto con un id previamente asignado");
+        }
         else{
             Producto productoNuevo = mapper.convertValue(productoDTO, Producto.class);
+
+            /**   bloque de agregado de caracteristicas NUEVAS y/o ya existentes, tambien las retorna con id luego de pasar por caracteristicaService (y la BD)**/
+
+            logger.info("aqui estan los productos filtrados de la lista, los no repetidos "+ productoNuevo.getCaracteristicas().stream().collect(Collectors.toSet()));
+
+            productoNuevo.setCaracteristicas(caracteristicaService.agregarNueva(productoNuevo.getCaracteristicas().stream().collect(Collectors.toSet())));
+
+            /**-------------------------------------**/
+
+            if(productoDTO.getListadereservas().isEmpty()){
+                productoDTO.setListadereservas(null);
+            }
+
+            /**------------------ Bloque agregado de imágenes -------------------**/
+
+            productoNuevo.setListadeimagenes(imagenService.agregarNueva(productoDTO.getListadeimagenes()));
+
+            /**-------------------------------------**/
+
+            logger.info("PRODUCTO : " + productoNuevo);
+
             productoRepository.save(productoNuevo);
             logger.info("Se agregó un nuevo producto al sistema");
             return mapper.convertValue(productoNuevo, ProductoDTO.class);
@@ -137,8 +161,32 @@ public class ProductoService implements IGenericaService<ProductoDTO, Long>{
             Producto p = producto1.get();
             p.setNombre(productoDTO.getNombre());
             p.setDescripcion(productoDTO.getDescripcion());
+            p.setNormas(productoDTO.getNormas());
+            p.setSaludYSeguridad(productoDTO.getSaludYSeguridad());
+            p.setPoliticaCancelacion(productoDTO.getPoliticaCancelacion());
+            p.setDireccion(productoDTO.getDireccion());
+            /**   bloque de agregado de caracteristicas NUEVAS y/o ya existentes, tambien las retorna con id luego de pasar por caracteristicaService (y la BD)**/
 
-            /**bloque de agregado de puntuacion**/
+            if (productoDTO.getCaracteristicas().isEmpty()){
+                productoDTO.setCaracteristicas(null);  //para que no rompa si agregan una lista vacia,por si no quieren actualizar ninguna
+            }
+            else {
+                p.setCaracteristicas(caracteristicaService.agregarNueva(productoDTO.getCaracteristicas().stream().collect(Collectors.toSet())));
+            }
+            /**-------------------------------------**/
+
+            /**------------------ Bloque agregado de imágenes -------------------**/
+            if (productoDTO.getListadeimagenes().isEmpty()){
+                productoDTO.setListadeimagenes(null);  //para que no rompa si agregan una lista vacia,por si no quieren actualizar ninguna
+            }
+            else {
+                p.setListadeimagenes(imagenService.agregarNueva(productoDTO.getListadeimagenes()));
+            }
+            if(productoDTO.getListadereservas().isEmpty()){
+                productoDTO.setListadereservas(null);
+            }
+            logger.info("producto bd " + p);
+            /**   bloque de agregado de puntuacion  **/
             if (productoDTO.getPuntuaciones().isEmpty()){
                 productoDTO.setPuntuaciones(null);      //si al actualizar, se olvidan o no quieren colocar una puntuacion, el programa no  rompe, agrega un null
             }
@@ -165,6 +213,31 @@ public class ProductoService implements IGenericaService<ProductoDTO, Long>{
             Producto p = producto1.get();
             p.setNombre(productoDTO.getNombre());
             p.setDescripcion(productoDTO.getDescripcion());
+            p.setNormas(productoDTO.getNormas());
+            p.setSaludYSeguridad(productoDTO.getSaludYSeguridad());
+            p.setPoliticaCancelacion(productoDTO.getPoliticaCancelacion());
+            p.setDireccion(productoDTO.getDireccion());
+            /**   bloque de agregado de caracteristicas NUEVAS y/o ya existentes, tambien las retorna con id luego de pasar por caracteristicaService (y la BD)**/
+
+            if (productoDTO.getCaracteristicas().isEmpty()){
+                productoDTO.setCaracteristicas(null);  //para que no rompa si agregan una lista vacia,por si no quieren actualizar ninguna
+            }
+            else {
+            p.setCaracteristicas(caracteristicaService.agregarNueva(productoDTO.getCaracteristicas().stream().collect(Collectors.toSet())));
+            }
+            /**-------------------------------------**/
+
+            /**------------------ Bloque agregado de imágenes -------------------**/
+            if (productoDTO.getListadeimagenes().isEmpty()){
+                productoDTO.setListadeimagenes(null);  //para que no rompa si agregan una lista vacia,por si no quieren actualizar ninguna
+            }
+            else {
+                p.setListadeimagenes(imagenService.agregarNueva(productoDTO.getListadeimagenes()));
+            }
+
+            if(productoDTO.getListadereservas().isEmpty()){
+                productoDTO.setListadereservas(null);
+            }
             logger.info("producto bd " + p);
 
             /**bloque de agregado de puntuacion**/
@@ -189,19 +262,6 @@ public class ProductoService implements IGenericaService<ProductoDTO, Long>{
         }
     }
 
-    @Override
-    public Boolean eliminar(Long id) throws BadRequestException {
-        Optional<Producto> producto = productoRepository.findById(id);
-        if(producto.isEmpty()){
-            throw new BadRequestException("No existe producto con ese id");
-        }
-        else{
-            productoRepository.deleteById(id);
-            logger.info("Eliminando un producto");
-            ProductoDTO productoDTO = mapper.convertValue(producto, ProductoDTO.class);
-            return (productoDTO == null); //si el producto fue eliminado es igual a null y devuelve TRUE
-        }
-    }
 
     public List<Imagen> buscarPorId(Long id) throws BadRequestException {
         Optional<Producto> producto = productoRepository.findById(id);
@@ -211,7 +271,6 @@ public class ProductoService implements IGenericaService<ProductoDTO, Long>{
         }
 
         List<Imagen> imagenesencontradas = producto.get().getListadeimagenes();
-        //List<Imagen> imagenesencontradas = imagenRepository.findAll();
         if(imagenesencontradas == null || imagenesencontradas.size() ==0){
             logger.error("no existen imagenes en ese producto");
             throw new BadRequestException("no existen imagenes en ese producto");
@@ -222,16 +281,12 @@ public class ProductoService implements IGenericaService<ProductoDTO, Long>{
     public List<ProductoDTO> buscarPorFechas(FechasDTO fechasDTO) throws BadRequestException{
         LocalDate fechaInicial = LocalDate.parse(fechasDTO.getFechaInicial());
         LocalDate fechaFinal = LocalDate.parse(fechasDTO.getFechaFinal());
-        if(fechaInicial.isAfter(fechaFinal)) {
-            throw new BadRequestException("La fecha de inicio de reserva no puede ser posterior a la fecha final");
+        if(fechaInicial.isAfter(fechaFinal) || (fechaInicial.isBefore(LocalDate.now()))) {
+            throw new BadRequestException("El rango de fechas ingresado no es válido");
         }
         List<Producto> productosDisponibles = productoRepository.filterProductsByDates(fechaInicial, fechaFinal);
         List<ProductoDTO> productosDisponiblesDTO = new ArrayList<>();
-        if(productosDisponibles.size() == 0) {
-            throw new BadRequestException("No hay autos disponibles en esas fechas");
-        }
         for (Producto producto : productosDisponibles) {
-
             ProductoDTO productoDTO = mapper.convertValue(producto, ProductoDTO.class);
             productosDisponiblesDTO.add(productoDTO);
         }
@@ -241,16 +296,23 @@ public class ProductoService implements IGenericaService<ProductoDTO, Long>{
     public List<ProductoDTO> filtrarPorCiudadYFechas(Long idCiudad, FechasDTO fechasDTO) throws BadRequestException {
         LocalDate fechaInicial = LocalDate.parse(fechasDTO.getFechaInicial());
         LocalDate fechaFinal = LocalDate.parse(fechasDTO.getFechaFinal());
+        if(fechaInicial.isAfter(fechaFinal) || (fechaInicial.isBefore(LocalDate.now()))) {
+            throw new BadRequestException("El rango de fechas ingresado no es válido");
+        }
         List<Producto> disponiblesPorCiudadYFechas = productoRepository.filterProductsByCityAndDates(idCiudad, fechaInicial, fechaFinal);
         List<ProductoDTO> disponiblesPorCiudadYFechasDTO = new ArrayList<>();
         for (Producto producto : disponiblesPorCiudadYFechas) {
-
             ProductoDTO productoDTO = mapper.convertValue(producto, ProductoDTO.class);
             disponiblesPorCiudadYFechasDTO.add(productoDTO);
         }
         return disponiblesPorCiudadYFechasDTO;
     }
 
+    @Override
+    public void eliminar(Long id) throws BadRequestException {
+        logger.info("Eliminando un producto");
+        productoRepository.deleteById(id);
+    }
 
 
 }
